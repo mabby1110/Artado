@@ -6,12 +6,11 @@ npm install
 ```
 
 ### ejecutar servidor
-ejecutar
 ```
 npm run start
 ```
 
-ejecutar en modo desarrollo
+desarrollo
 ```
 npm run dev
 ```
@@ -19,4 +18,9 @@ npm run dev
 ### ejecutar webpack
 ```
 npm run webpack
+```
+
+### ejecutar base de datos local
+```
+mongod
 ```

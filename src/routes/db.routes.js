@@ -2,42 +2,42 @@ const express = require('express')
 const router = express.Router()
 const path = require('path')
 
+const User = require('../models/schema')
+
 // create
 router.post('/', async (req, res) => {
     // console.log(req.body)
-    const { title, description } = req.body
-    const task = new Task({title, description})
-    await task.save()
-    res.json({status: "Task Saved"})
+    const { tag, password } = req.body
+    const CreateUser = new User({tag, password})
+    await CreateUser.save()
+    res.json({status: "user saved"})
 })
 
 // read
 router.get('/', async (req, res) => {
-    const tasks = await Task.find()
-    // console.log(tasks)
-    res.json(tasks)
+    const ReadUser = await User.find()
+    res.json(ReadUser)
 })
 
 router.get('/:id', async (req, res) => {
-    const task = await Task.findById(req.params.id)
-     console.log(tasks)
-    res.json(task)
+    const ReadUser = await User.findById(req.params.id)
+    res.json(ReadUser)
 })
 
 //update
 router.put('/:id', async (req, res) => {
-    const {title, description} = req.body
-    const updateTask  = {title, description}
-    await Task.findByIdAndUpdate(req.params.id, updateTask)
-    res.json({status: "Task Updated"})
+    const {tag, password} = req.body
+    const UpdateUser  = {tag, password}
+    await User.findByIdAndUpdate(req.params.id, UpdateUser)
+    res.json({status: "user updated"})
 })
 
 // delete
 router.delete('/:id', async (req, res) => {
-    const {title, description} = req.body
-    const deleteTask  = {title, description}
-    await Task.findByIdAndDelete(req.params.id, deleteTask)
-    res.json({status: "Task Deleted"})
+    const {tag, password} = req.body
+    const DeleteUser = {tag, password}
+    await User.findByIdAndDelete(req.params.id, DeleteUser)
+    res.json({status: "user deleted"})
 })
 
 module.exports = router

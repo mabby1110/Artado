@@ -14,7 +14,7 @@ app.use(morgan('dev'))              // formatea y muestra los request al servido
 app.use(express.json())    //comprueba que los datos recibidos estan en formato json
 
 // Routes
-app.use('/api/usuarios', require('./routes/db.routes'))
+app.use('/api', require('./routes/db.routes'))
 
 // Statics
 app.use(express.static(path.join(__dirname, 'public')))
