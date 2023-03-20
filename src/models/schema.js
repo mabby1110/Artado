@@ -6,4 +6,19 @@ const UserSchema = new Schema({
     password: {type: String, required: true}
 })
 
-module.exports = mongoose.model('User', UserSchema)
+const PostSchema = new Schema({
+    Titulo: {type: String, required: true},
+    Descripcion: {type: String, required: true},
+    Objetivo: {type: String, required: true},
+    Rol: [
+        {
+            Titulo: {type: String, required: true},
+            Etiquetas: [{type: String, required: true}]
+        }
+    ]
+})
+
+module.exports = {
+    User: mongoose.model('User', UserSchema),
+    Post: mongoose.model('Post', PostSchema)
+}

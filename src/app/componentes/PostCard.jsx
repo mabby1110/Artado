@@ -138,7 +138,7 @@ export function PostCard() {
           <h3>Se busca</h3>
           <ul>
             <li>
-              <label class="checkContainer">
+              <label className="checkContainer">
                 <input type="checkbox" name="" id="" />
                 <span className="checkS"></span>
               </label>
