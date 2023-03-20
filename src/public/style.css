@@ -1,0 +1,41 @@
+/* Pink (Common styles) */
+:root {
+    --blanco_2: #b8b2c0;
+    --primary: #b8b2c0;
+    --morado: #170e25;
+}
+
+body {
+    color: white;
+    background-color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+
+#root {
+    display: grid;
+    grid-template:
+    "h h h"
+    "p m s";
+    grid-template-rows: 6.25 auto;
+    grid-template-columns: 20% auto 20%;
+    column-gap: 1.25rem;
+    row-gap: 1.25rem;
+}
+
+.NavBar {
+    grid-area: h ;
+}
+
+.MainSection {
+    grid-area: m;
+}
+
+.SocialBar {
+    grid-area: s;
+}
+
+.ProjectBar {
+    grid-area: p;
+}
