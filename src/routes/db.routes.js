@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
     res.json(task)
 })
 
- update
+//update
 router.put('/:id', async (req, res) => {
     const {title, description} = req.body
     const updateTask  = {title, description}

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 const color = {
   'gris_claro':'#252525',
@@ -7,7 +8,7 @@ const color = {
   'morado':'#170E25'
 }
 
-export const CardStyle = styled.div({
+export const CardStyle = css({
   backgroundColor: color['gris_claro'],
   marginBottom: '0.75rem'
 })
