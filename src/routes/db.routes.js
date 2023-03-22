@@ -7,7 +7,7 @@ const {User, Post } = require('../models/schema')
 // create
 router.post('/usr/', async (req, res) => {
     // console.log(req.body)
-    const { tag, password } = req.body
+    const { tag, password, GGG } = req.body
     const CreateUser = new User({tag, password})
     await CreateUser.save()
     res.json({status: "user saved"})

@@ -20,8 +20,8 @@ const PostCardStyle = styled.div`
   }
   .postText {
     margin-top: 15px;
-    background: #323030;
-    color: white;
+    background: Var(--fondo_componente);
+    color: Var(--texto_primario);
     .sectionOne {
       margin-left: 10px;
       display: inline-block;
@@ -110,7 +110,7 @@ const PostCardStyle = styled.div`
         font-size: 20px;
         border: none;
         margin-left: 20px;
-        background: blueviolet;
+        background: Var(--principal);
         text-decoration: none;
         color: white;
         border-radius: 7px;

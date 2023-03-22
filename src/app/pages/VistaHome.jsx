@@ -1,15 +1,15 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react"
 
 // componentes
-import { NewPost } from "../componentes/NewPost";
+import { NewPost } from "../componentes/NewPost"
 import { PostCard } from "../componentes/PostCard"
 
 // css global
-import { MainSectionStyle } from "../Ye";
+import { MainSectionStyle } from "../Ye"
 
 export function Home() {
-    const [Datos, setDatos] = useState([]);
-    const Publicaciones =[];
+    const [Datos, setDatos] = useState([])
+    const Publicaciones =[]
 
     const GetDatos =async ()=>{
         await fetch('/api/post')
@@ -17,17 +17,17 @@ export function Home() {
             .then(data =>{
                 data.forEach(element => {
                     Publicaciones.push(element)
-                });
-                setDatos(Publicaciones);
-        });
-    };
+                })
+                setDatos(Publicaciones)
+        })
+    }
 
     useEffect(() => {
-        GetDatos();
-    }, []);
+        GetDatos()
+    }, [])
 
     return (
-        <MainSectionStyle className="MainSection">
+        <MainSectionStyle>
             {
                 Datos.map((items)=>{
                     return (
@@ -36,5 +36,5 @@ export function Home() {
                 })
             }
         </MainSectionStyle>
-    );
+    )
 }
