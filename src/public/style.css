@@ -18,7 +18,7 @@ body {
     grid-template:
     "h h h"
     "p m s";
-    grid-template-rows: 6.25 auto;
+    grid-template-rows: auto auto;
     grid-template-columns: 20% auto 20%;
     column-gap: 1.25rem;
     row-gap: 1.25rem;

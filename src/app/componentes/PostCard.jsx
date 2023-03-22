@@ -121,17 +121,15 @@ const PostCardStyle = styled.div`
   }
 `;
 
-export function PostCard() {
+export function PostCard(props) {
   return (
     <PostCardStyle css={CardStyle}>
       <img src="https://picsum.photos/600/200" alt="" />
       <div className="postText">
         <div className="sectionOne">
-          <h1>Titulo proyecto</h1>
+          <h1>{props.titulo}</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur. Nec gravida fermentum
-            faucibus arcu elit adipiscing nunc potenti. Posuere lacus tortor
-            ultricies purus risus sit.
+            {props.descripcion}
           </p>
         </div>
         <div className="sectionTwo">
