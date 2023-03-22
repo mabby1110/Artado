@@ -1,9 +1,13 @@
 import React from "react";
 
+// componentes
+// css global
+import { SocialBarStyle } from "../Ye";
+
 export function SocialBar() {
     return (
-      <div className="SocialBar">
+      <SocialBarStyle className="SocialBar">
         Barra Social
-      </div>
+      </SocialBarStyle>
     );
 }

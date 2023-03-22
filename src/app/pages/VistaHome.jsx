@@ -11,7 +11,7 @@ export function Home() {
     const [Datos, setDatos] = useState([])
     const Publicaciones =[]
 
-    const GetDatos =async ()=>{
+    const GetDatos = async ()=>{
         await fetch('/api/post')
             .then(res => res.json())
             .then(data =>{
@@ -28,10 +28,11 @@ export function Home() {
 
     return (
         <MainSectionStyle>
+            <NewPost/>
             {
                 Datos.map((items)=>{
                     return (
-                        <PostCard titulo={items.Titulo} descripcion={items.Descripcion}/>
+                        <PostCard key={items._id} titulo={items.Titulo} descripcion={items.Descripcion}/>
                     )
                 })
             }

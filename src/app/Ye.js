@@ -6,11 +6,21 @@ export const CardStyle = css({
   marginBottom: '0.75rem'
 })
 
+export const NewPostStyle = css({
+  backgroundColor: 'Var(--principal)'
+})
+
 export const MainSectionStyle = styled.div({
   backgroundColor: 'Var(--fondo_seccion)',
   padding: '0.75rem'
 })
 
 export const ProjectBarStyle = styled.nav({
-  backgroundColor: 'Var(--fondo_seccion)'
+  backgroundColor: 'Var(--fondo_seccion)',
+  padding: '0.75rem'
+})
+
+export const SocialBarStyle = styled.nav({
+  backgroundColor: 'Var(--fondo_seccion)',
+  padding: '0.75rem'
 })

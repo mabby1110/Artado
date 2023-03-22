@@ -1,9 +1,13 @@
 import React from "react";
 
+// componentes
+// css global
+import { MainSectionStyle } from "../Ye";
+
 export function Perfil() {
     return (
-        <div className="MainSection">
+        <MainSectionStyle className="MainSection">
             Perfil
-        </div>
+        </MainSectionStyle>
     );
 }
