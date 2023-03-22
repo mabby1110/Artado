@@ -1,17 +1,25 @@
 /** @jsxImportSource @emotion/react */
 import React, {useState, useEffect} from "react";
 import { css } from "@emotion/react";
+import { set } from "mongoose";
 
 // componentes
 
 // css global
 
 export function NewPost() {
-  const Publicaciones = {
+  let Publicacion = {
     Titulo: '',
-    Descripcion: ''
+    Descripcion: '',
+    Objetivo: '',
+    Rol: [
+        {
+            Titulo: '',
+            Etiquetas: []
+        }
+    ]
   }
-  const [Datos, setDatos] = useState(Publicaciones)
+  const [Datos, setDatos] = useState(Publicacion)
 
   const PostDatos = async (e) => {
     await fetch('/api', {
@@ -33,15 +41,13 @@ export function NewPost() {
 
   function handleChange(e) {
     const { name, value} = e.target
-    setDatos({
-      [name]: value
-    })
-    console.log(Datos)
+    Publicacion[name] = value
+    console.log(Publicacion)
   }
   
   return (
     <div>
-      <form onSubmit={(e) => publicarProyecto(e)}>
+      <form onSubmit={(e) => PostDatos(e)}>
         <div>
           <h1>Titulo</h1>
           <input onChange={(e) => handleChange(e)} name="Titulo" type="text"/>
@@ -57,9 +63,17 @@ export function NewPost() {
         <div>
           <h3>Se busca</h3>
           <p>Nombre del rol</p>
-          <input onChange={(e) => handleChange(e)} name="Rol" type="text"/>
+          <input onChange={(e) => addRol(e)} name="Rol" type="text"/>
           <p>Etiqueta</p>
-          <input onChange={(e) => handleChange(e)} name="Etiqueta" type="text"/>
+          <input onChange={(e) => addRol(e)} name="Etiqueta" type="text"/>
+          <input type="button" value="+" />
+          {
+            // Datos.map((items)=>{
+            //   return (
+            //       <div>{items.Rol}</div>
+            //   )
+            // })
+          }
         </div>
         <button type="submit">Publicar</button>
       </form>
