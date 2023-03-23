@@ -28,9 +28,7 @@ export function NewPost() {
   const ref_rol = useRef(null);
 
   const PostPublicacion = async (e) => {
-    console.log((Publicacion))
-    setDatos(Publicacion)
-    console.log(Publicacion)
+    console.log(Datos)
 
     // await fetch('/api', {
     //     method: 'POST',
@@ -56,27 +54,25 @@ export function NewPost() {
         [...prev, ...Rol.Etiquetas]
       )
     })
-    console.log(Rol.Etiquetas)
     ref_etiqueta.current.value = ''
   }
   
   function AddRol() {
-    Publicacion.Rol.push(Rol)
-    Rol = {
-      Titulo: '',
-      Etiquetas: []
-    }
+    Rol.Titulo = ref_rol.current.value
+    Rol.Etiquetas = Etiquetas
+    setDatos((prev)=>{
+      prev.Rol.push(Rol)
+      return({...prev, Rol: prev.Rol})
+    })
+    setEtiquetas([])
     ref_rol.current.value = ''
   }
 
   function HandleChange(e) {
     const { name, value } = e.target
-    if (name == 'Rol') {
-      Rol.Titulo = value
-    } else {
-      Publicacion[name] = value
-    }
-    console.log(Publicacion)
+    setDatos((prev)=>{
+      return({...prev, [name]: value})
+    })
   }
 
   return (
@@ -97,16 +93,16 @@ export function NewPost() {
         <div>
           <h3>Se busca</h3>
           <p>Nombre del rol</p>
-          <input onChange={(e) => HandleChange(e)} name="Rol" ref={ref_rol} type="text"/>
+          <input name="Rol" ref={ref_rol} type="text"/>
           {
             Etiquetas.map((etiqueta)=>{
               return(
-                <input type="button" value={etiqueta} />
+                <input type="button" key={etiqueta} value={etiqueta} />
               )
             })
           }
           <p>Etiqueta</p>
-          <input onChange={(e) => HandleChange(e)} name="Etiqueta" ref={ref_etiqueta} type="text"/>
+          <input name="Etiqueta" ref={ref_etiqueta} type="text"/>
 
           <input type="button" value="+" onClick={()=>AddEtiqueta()}/>
           <input type="button" value="Add" onClick={()=>AddRol()}/>
@@ -114,7 +110,14 @@ export function NewPost() {
             {
               Datos.Rol.map((rol)=>{
                 return(
-                  rol.Titulo
+                  <div key={rol}>
+                    <h2>{rol.Titulo}</h2>
+                    {
+                      rol.Etiquetas.map((e)=>{
+                        return(<p key={e}>e</p>)
+                      })
+                    }
+                  </div>
                 )
               })
             }
