@@ -3,9 +3,11 @@ import React, {useState, useEffect} from "react"
 // componentes
 import { NewPost } from "../componentes/NewPost"
 import { PostCard } from "../componentes/PostCard"
+import { SearchBar } from "../componentes/SearchBar"
 
 // css global
 import { MainSectionStyle } from "../Ye"
+import { SearchBarStyle } from "../Ye"
 
 export function Home() {
     const [Datos, setDatos] = useState([])
@@ -27,15 +29,17 @@ export function Home() {
     }, [])
 
     return (
-        <MainSectionStyle className="MainSection">
-            <NewPost/>
-            {
-                Datos.map((items)=>{
-                    return (
-                        <PostCard key={items._id} titulo={items.Titulo} descripcion={items.Descripcion}/>
-                    )
-                })
-            }
-        </MainSectionStyle>
+        <>  
+            <SearchBar/>
+            <MainSectionStyle className="MainSection">
+                {
+                    Datos.map((items)=>{
+                        return (
+                            <PostCard key={items._id} titulo={items.Titulo} descripcion={items.Descripcion}/>
+                        )
+                    })
+                }
+            </MainSectionStyle>
+        </>
     )
 }

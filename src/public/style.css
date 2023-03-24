@@ -19,16 +19,16 @@ body {
 #root {
     display: grid;
     grid-template:
-    "h h h"
-    "p m s";
-    grid-template-rows: auto auto;
+    "nav nav nav"
+    "pb search sb"
+    "pb main sb";
+    grid-template-rows: auto auto auto;
     grid-template-columns: auto minmax(auto, 38rem) auto;
-    column-gap: 1.25rem;
     gap: 1.25rem;
 }
 
 .NavBar {
-    grid-area: h ;
+    grid-area: nav ;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -36,23 +36,33 @@ body {
 }
 
 .MainSection {
-    grid-area: m;
+    grid-area: main;
     justify-self: center;
 
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
 .SocialBar {
-    grid-area: s;
+    grid-area: sb;
     justify-self: start;
 }
 
 .ProjectBar {
-    grid-area: p;
+    grid-area: pb;
     justify-self: end;
 }
 
-.none {
-    background-color: var();
+.SearchBar {
+    grid-area: search;
+    
+    display: grid;
+    grid-template:
+    "search search btn"
+    "form form form";
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto 10%;
+    gap: 1rem;
+
 }

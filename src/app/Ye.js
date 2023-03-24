@@ -17,6 +17,26 @@ export const NavBarStyle = styled.nav`
     padding: 0 1.125rem;
   }
 `
+export const SearchBarStyle = styled.nav`
+  background-color: var(--fondo);
+  .search {
+    grid-area: search;
+    height: 2rem;
+    width: 100%;
+    border-radius: 10px;
+    border-style: none;
+  }
+
+  .btn {
+    grid-area: btn;
+    border-radius: 10px;
+    border-style: none;
+  }
+
+  .form {
+    grid-area: form;
+  }
+`
 
 export const ProjectBarStyle = styled.div({
   backgroundColor: 'Var(--fondo_seccion)',
