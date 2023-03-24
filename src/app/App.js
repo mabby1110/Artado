@@ -7,8 +7,8 @@ import { Perfil } from './pages/VistaPerfil'
 import { Proyectos } from './pages/VistaProyectos'
 
 import { NavBar } from "./componentes/NavBar"
-import { SocialBar } from "./componentes/SocialBar"
-import { ProjectBar } from "./componentes/ProjectBar"
+import  SocialBar  from "./componentes/SocialBar/SocialBar"
+import ProjectBar from "./componentes/ProjectBar/ProjectBar"
 
 export default function App() {
   return (
