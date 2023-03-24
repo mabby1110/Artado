@@ -22,7 +22,7 @@ body {
     "h h h"
     "p m s";
     grid-template-rows: auto auto;
-    grid-template-columns: 20% auto 20%;
+    grid-template-columns: auto minmax(auto, 38rem) auto;
     column-gap: 1.25rem;
     row-gap: 1.25rem;
 }
@@ -33,12 +33,18 @@ body {
 
 .MainSection {
     grid-area: m;
+    justify-self: center;
+
+    display: grid;
+    justify-content: center;
 }
 
 .SocialBar {
     grid-area: s;
+    justify-self: start;
 }
 
 .ProjectBar {
     grid-area: p;
+    justify-self: end;
 }

@@ -27,7 +27,7 @@ export function Home() {
     }, [])
 
     return (
-        <MainSectionStyle>
+        <MainSectionStyle className="MainSection">
             <NewPost/>
             {
                 Datos.map((items)=>{

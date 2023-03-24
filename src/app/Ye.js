@@ -7,12 +7,14 @@ export const CardStyle = css({
 })
 
 export const NewPostStyle = css({
-  backgroundColor: 'Var(--principal)'
+  backgroundColor: 'Var(--principal)',
+
 })
 
 export const MainSectionStyle = styled.div({
   backgroundColor: 'Var(--fondo_seccion)',
-  padding: '0.75rem'
+  padding: '0.75rem',
+  width: 'min-content'
 })
 
 export const ProjectBarStyle = styled.nav({
