@@ -14,7 +14,7 @@ export const ProjectBarStyle = styled.div`
   .userPic {
     object-fit: cover;
     width: 15em;
-    height: 15em;
+    height: 15em; 
     border: black solid 4px;
     border-radius: 7px;
     margin-top: 1em;

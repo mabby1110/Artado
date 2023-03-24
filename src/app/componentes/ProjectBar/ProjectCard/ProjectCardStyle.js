@@ -8,7 +8,7 @@ export const ProjectCardStyle = styled.div`
   border-radius: 15px;
   position: relative;
   margin-bottom:5px;
-  img {
+  img { 
     object-fit: cover;
     border-radius: 100%; 
     width: 3.5em;

@@ -9,7 +9,7 @@ const ProjectBar = () => {
         <img src="https://picsum.photos/200/300" alt="" className="userPic" />
       </div>
       <div className="barContent">
-        <h2>Mis Proyectos</h2>
+        <h2>Mis Proyectos</h2> 
         <div className="projectSection1">
           <ProjectCard1 />
           <ProjectCard1 />

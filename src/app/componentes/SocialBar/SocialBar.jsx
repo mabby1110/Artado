@@ -12,7 +12,7 @@ const SocialBar = () => {
         <h5>Roles</h5> 
         <div className="cards">
           <SocialCard />
-          <SocialCard />
+          <SocialCard /> 
           <SocialCard />
         </div>
       </div>

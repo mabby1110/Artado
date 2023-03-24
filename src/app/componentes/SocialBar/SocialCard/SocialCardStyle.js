@@ -22,7 +22,7 @@ img {
   display: inline-block;
   h3 {
     font-size: 20px;
-    margin: 0;
+    margin: 0; 
     display: inline-block;
   }
   .filterSection{

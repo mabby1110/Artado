@@ -8,7 +8,7 @@ import { Proyectos } from './pages/VistaProyectos'
 
 import { NavBar } from "./componentes/NavBar"
 import  SocialBar  from "./componentes/SocialBar/SocialBar"
-import ProjectBar from "./componentes/ProjectBar/ProjectBar"
+import ProjectBar from "./componentes/ProjectBar/ProjectBar" 
 
 export default function App() {
   return (

@@ -6,7 +6,7 @@ color: white;
 width: min-content;
 padding: 5px;
 display: flex;
-flex-wrap: wrap;
+flex-wrap: wrap; 
 flex-direction: column;
 .titleSection{
   display: inline-block;
