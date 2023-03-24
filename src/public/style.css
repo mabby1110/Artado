@@ -24,11 +24,15 @@ body {
     grid-template-rows: auto auto;
     grid-template-columns: auto minmax(auto, 38rem) auto;
     column-gap: 1.25rem;
-    row-gap: 1.25rem;
+    gap: 1.25rem;
 }
 
 .NavBar {
     grid-area: h ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .MainSection {
@@ -47,4 +51,8 @@ body {
 .ProjectBar {
     grid-area: p;
     justify-self: end;
+}
+
+.none {
+    background-color: var();
 }

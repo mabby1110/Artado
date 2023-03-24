@@ -2,14 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { css } from "@emotion/react";
 
+// css global
+import { NavBarStyle } from "../Ye"
+
 export function NavBar() {
     return (
-        <nav className="NavBar">
-            <ul>
-                <li><NavLink to="/proyectos">Proyectos</NavLink></li>
-                <li><NavLink to="/">ARTADO</NavLink></li>
-                <li><NavLink to="/perfil">Perfil</NavLink></li>
-            </ul>
-        </nav>
+        <NavBarStyle className="NavBar">
+            <NavLink to="/proyectos">Proyectos</NavLink>
+            <NavLink to="/">ARTADO</NavLink>
+            <NavLink to="/perfil">Perfil</NavLink>
+        </NavBarStyle>
     );
 }
