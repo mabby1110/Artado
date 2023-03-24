@@ -10,7 +10,7 @@ flex-wrap: wrap;
 flex-direction: column;
 .titleSection{
   display: inline-block;
-  h2{
+  h2{ 
     font-size: 24px;
     margin: 0;
   }

@@ -13,7 +13,7 @@ const ProjectBar = () => {
         <div className="projectSection1">
           <ProjectCard1 />
           <ProjectCard1 />
-          <ProjectCard1 />
+          <ProjectCard1 /> 
           <ProjectCard1 />
         </div>
         <h2>Otros Proyectos</h2>

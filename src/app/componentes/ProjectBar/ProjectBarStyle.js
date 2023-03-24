@@ -10,7 +10,7 @@ export const ProjectBarStyle = styled.div`
   color: white;
   .profilePic{
     text-align:center;
-  }
+  } 
   .userPic {
     object-fit: cover;
     width: 15em;

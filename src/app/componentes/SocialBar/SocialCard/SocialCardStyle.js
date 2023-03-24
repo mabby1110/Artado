@@ -29,7 +29,7 @@ img {
     background:red;
     margin:0;
     width: -webkit-fill-available;
-    height: -webkit-fill-available;
+    height: -webkit-fill-available; 
   }
 }
 `;

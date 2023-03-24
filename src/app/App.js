@@ -15,7 +15,7 @@ export default function App() {
     <BrowserRouter>
       <NavBar/>
       <ProjectBar/>
-      <Routes>
+      <Routes> 
         <Route path='/' element={<Home/>}/>
         <Route path="/perfil" element={<Perfil/>} />
         <Route path="/proyectos" element={<Proyectos/>} />

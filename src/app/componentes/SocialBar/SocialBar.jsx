@@ -9,7 +9,7 @@ const SocialBar = () => {
         <h2>Usuarios destacados</h2>
       </div>
       <div className="cardSection">
-        <h5>Roles</h5>
+        <h5>Roles</h5> 
         <div className="cards">
           <SocialCard />
           <SocialCard />

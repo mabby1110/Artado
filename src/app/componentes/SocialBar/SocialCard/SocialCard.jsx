@@ -15,4 +15,4 @@ const SocialCard = () => {
   );
 };
 
-export default SocialCard;
+export default SocialCard; 

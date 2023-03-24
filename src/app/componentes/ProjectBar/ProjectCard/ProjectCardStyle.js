@@ -10,7 +10,7 @@ export const ProjectCardStyle = styled.div`
   margin-bottom:5px;
   img {
     object-fit: cover;
-    border-radius: 100%;
+    border-radius: 100%; 
     width: 3.5em;
     height: 3.5em;
     margin: 5px;
