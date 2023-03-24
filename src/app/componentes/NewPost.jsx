@@ -3,9 +3,8 @@ import React, {useState, useEffect, useRef} from "react";
 import { css } from "@emotion/react";
 import { set } from "mongoose";
 
-// componentes
-
 // css global
+import { NewPostStyle } from "../Ye";
 
 export function NewPost() {
   let Publicacion = {
@@ -19,8 +18,6 @@ export function NewPost() {
       Titulo: '',
       Etiquetas: []
   }
-
-  let Etiqueta = []
   
   const [Datos, setDatos] = useState(Publicacion)
   const [Etiquetas, setEtiquetas] = useState([])
@@ -28,22 +25,19 @@ export function NewPost() {
   const ref_rol = useRef(null);
 
   const PostPublicacion = async (e) => {
-    console.log(Datos)
-
-    // await fetch('/api', {
-    //     method: 'POST',
-    //     body: JSON.stringify(this.state),
-    //     headers: {
-    //       'Accept': 'application/json',
-    //       'Content-Type': 'application/json'
-    //     }
-    //   })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     console.log(data)
-    //   })
-    //   .catch(err => console.error(err))
-
+    await fetch('/api/post', {
+      method: 'POST',
+      body: JSON.stringify(Datos),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+    .catch(err => console.error(err))
     e.preventDefault()
   }
 
@@ -76,7 +70,7 @@ export function NewPost() {
   }
 
   return (
-    <div>
+    <NewPostStyle>
       <form onSubmit={(e) => PostPublicacion(e)}>
         <div>
           <h1>Titulo</h1>
@@ -106,25 +100,22 @@ export function NewPost() {
 
           <input type="button" value="+" onClick={()=>AddEtiqueta()}/>
           <input type="button" value="Add" onClick={()=>AddRol()}/>
-          <p>
-            {
-              Datos.Rol.map((rol)=>{
-                return(
-                  <div key={rol}>
-                    <h2>{rol.Titulo}</h2>
-                    {
-                      rol.Etiquetas.map((e)=>{
-                        return(<p key={e}>e</p>)
-                      })
-                    }
-                  </div>
-                )
-              })
-            }
-          </p>
         </div>
+        <div>
+          {
+            Datos.Rol.map((rol, index)=>{
+              return(
+                <div key={index}>
+                  <p> {rol.Titulo} </p>
+                  {rol.Etiquetas.map(etiqueta=>{return(<input type="button" key={etiqueta} value={etiqueta} />)})}
+                </div>
+              )
+            })
+          }
+        </div>
+        <br />
         <button type="submit">Publicar</button>
       </form>
-    </div>
+    </NewPostStyle>
   )
 }

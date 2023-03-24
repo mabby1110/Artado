@@ -8,7 +8,6 @@ import { css } from "@emotion/react";
 import { CardStyle } from "../Ye";
 
 const PostCardStyle = styled.div`
-  margin-top: 15px;
   padding-bottom: 1em;
   border-radius: 10px;
   overflow: hidden;

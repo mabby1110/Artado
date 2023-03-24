@@ -2,8 +2,9 @@ const express = require('express')
 const router = express.Router()
 const path = require('path')
 
-const {User, Post } = require('../models/schema')
+const { User, Post } = require('../models/schema')
 
+// CRUD USUARIOS
 // create
 router.post('/usr/', async (req, res) => {
     // console.log(req.body)
@@ -34,15 +35,11 @@ router.put('/usr/:id', async (req, res) => {
 
 // delete
 router.delete('/usr/:id', async (req, res) => {
-    const {tag, password} = req.body
-    const DeleteUser = {tag, password}
-    await User.findByIdAndDelete(req.params.id, DeleteUser)
+    await User.findByIdAndDelete(req.params.id)
     res.json({status: "user deleted"})
 })
 
-
-
-
+// CRUD PUBLICACIONES
 // create
 router.post('/post/', async (req, res) => {
     const {
@@ -82,8 +79,8 @@ router.put('/post/:id', async (req, res) => {
 
 // delete
 router.delete('/post/:id', async (req, res) => {
-    await Post.findByIdAndDelete(req.params.id, DeletePost)
-    res.json({status: "Post deleted"})
+    await Post.findByIdAndDelete(req.params.id)
+    res.json({status: "user deleted"})
 })
 
 module.exports = router
