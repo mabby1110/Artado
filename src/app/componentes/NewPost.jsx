@@ -3,6 +3,9 @@ import React, {useState, useEffect, useRef} from "react";
 import { css } from "@emotion/react";
 import { set } from "mongoose";
 
+// css global
+import { NewPostStyle } from "../Ye";
+
 export function NewPost() {
   let Publicacion = {
     Titulo: '',
@@ -67,7 +70,7 @@ export function NewPost() {
   }
 
   return (
-    <div>
+    <NewPostStyle>
       <form onSubmit={(e) => PostPublicacion(e)}>
         <div>
           <h1>Titulo</h1>
@@ -98,9 +101,8 @@ export function NewPost() {
           <input type="button" value="+" onClick={()=>AddEtiqueta()}/>
           <input type="button" value="Add" onClick={()=>AddRol()}/>
         </div>
-        <button type="submit">Publicar</button>
-        <br />
-        {
+        <div>
+          {
             Datos.Rol.map((rol, index)=>{
               return(
                 <div key={index}>
@@ -110,7 +112,10 @@ export function NewPost() {
               )
             })
           }
+        </div>
+        <br />
+        <button type="submit">Publicar</button>
       </form>
-    </div>
+    </NewPostStyle>
   )
 }

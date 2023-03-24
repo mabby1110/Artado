@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 
 export const MainSectionStyle = styled.div({
   backgroundColor: 'Var(--fondo_seccion)',
+  borderRadius: '10px',
   padding: '0.75rem',
   width: 'min-content'
 })
@@ -53,7 +54,8 @@ export const CardStyle = css({
   marginBottom: '0.75rem'
 })
 
-export const NewPostStyle = css({
-  backgroundColor: 'Var(--principal)',
-})
+export const NewPostStyle = styled.div`
+  backgroundColor: 'Var(--principal)';
+  padding: 0.75rem;
+`
 
