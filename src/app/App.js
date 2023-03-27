@@ -8,15 +8,15 @@ import { Proyectos } from './pages/VistaProyectos'
 import { Login } from './pages/VistaLogin'
 
 import { NavBar } from "./componentes/NavBar"
-import { SocialBar } from "./componentes/SocialBar"
-import { ProjectBar } from "./componentes/ProjectBar"
+import  SocialBar  from "./componentes/SocialBar/SocialBar"
+import ProjectBar from "./componentes/ProjectBar/ProjectBar" 
 
 export default function App() {
   return (
     <BrowserRouter>
       <NavBar/>
       <ProjectBar/>
-      <Routes>
+      <Routes> 
         <Route path='/' element={<Home/>}/>
         <Route path="/perfil" element={<Perfil/>} />
         <Route path="/proyectos" element={<Proyectos/>} />
