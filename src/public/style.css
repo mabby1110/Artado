@@ -20,10 +20,9 @@ body {
     display: grid;
     grid-template:
     "nav nav nav"
-    "pb search sb"
     "pb main sb";
     grid-template-rows: auto auto auto;
-    grid-template-columns: auto minmax(auto, 38rem) auto;
+    grid-template-columns: auto max-content auto;
     gap: 1.25rem;
 }
 
@@ -52,17 +51,4 @@ body {
 .ProjectBar {
     grid-area: pb;
     justify-self: end;
-}
-
-.SearchBar {
-    grid-area: search;
-    
-    display: grid;
-    grid-template:
-    "search search btn"
-    "form form form";
-    grid-template-rows: auto auto;
-    grid-template-columns: auto auto 10%;
-    gap: 1rem;
-
 }

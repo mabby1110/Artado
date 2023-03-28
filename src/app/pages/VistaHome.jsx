@@ -29,9 +29,9 @@ export function Home() {
     }, [])
 
     return (
-        <>  
+        <div className="MainSection">  
             <SearchBar/>
-            <MainSectionStyle className="MainSection">
+            <MainSectionStyle>
                 {
                     Datos.map((items)=>{
                         return (
@@ -40,6 +40,6 @@ export function Home() {
                     })
                 }
             </MainSectionStyle>
-        </>
+        </div>
     )
 }
