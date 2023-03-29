@@ -1,53 +1,56 @@
-/** @jsxImportSource @emotion/react */
-
-import React from "react";
 import styled from '@emotion/styled'
-import { css } from "@emotion/react";
+import { css } from '@emotion/react';
 
-// css global
-import { CardStyle } from "../Ye";
+export const CardStyle = css({
+    backgroundColor: 'Var(--fondo_componente)',
+    marginBottom: '0.75rem'
+  })
 
-const PostCardStyle = styled.div`
-  background-color: var(--fondo_componente);
-  padding: 0.75rem;
-  margin-bottom: 0.75rem;
+export const PostCardStyle = styled.div`
+  padding-bottom: 3em;
+  width: 100%;
   border-radius: 10px;
+  position:relative;
   overflow: hidden;
-  width: 50em;
   img {
     width: 100%;
     height: 17em;
     object-fit: cover;
   }
   .postText {
-    margin-top: 15px;
-    color: Var(--texto_principal);
+    background: Var(--fondo_componente);
+    color: Var(--texto_primario);
     .sectionOne {
       margin-left: 10px;
       display: inline-block;
       width: 40%;
       h1 {
-        font-size: 48px;
+        margin: 0;
+        font-weight: normal;
+        font-size: 42px;
       }
       p {
-        font-size: 16px;
+        font-size: 12px;
+        margin: 0;
+        margin-top: 0.5rem;
       }
     }
     .sectionTwo {
       margin-left: 4em;
       display: inline-block;
       vertical-align: top;
-      margin-top: 1em;
       h3 {
-        font-size: 24px;
+        font-size: 16px;
+        margin-top: 1rem;
+        font-weight: normal;
         margin-bottom: 18px;
       }
       li {
         list-style: none;
         p {
-          display: inline-block;
-          margin-left: 30px;
-          font-size: 16px;
+          margin: 0;
+          font-size: 10px;
+          margin-left: 1rem;
         }
         .checkContainer {
           display: block;
@@ -72,9 +75,10 @@ const PostCardStyle = styled.div`
           position: absolute;
           top: 0;
           left: 0;
-          height: 20px;
-          width: 20px;
+          height: 0.6rem;
+          width: 0.6rem;
           border: solid white 1px;
+          border-radius: 3px;
         }
         .checkS:after {
           content: "";
@@ -87,10 +91,10 @@ const PostCardStyle = styled.div`
         }
 
         .checkContainer .checkS:after {
-          left: 6px;
-          top: 2px;
-          width: 5px;
-          height: 10px;
+          left: 3px;
+          top: 0px;
+          width: 0.05rem;
+          height: 0.4rem;
           border: solid white;
           border-width: 0 3px 3px 0;
           -webkit-transform: rotate(45deg);
@@ -100,6 +104,9 @@ const PostCardStyle = styled.div`
       }
     }
     .buttons {
+      position: absolute;
+      bottom: 5px;
+      right: 0;
       text-align: right;
       margin-right: 10px;
       a {
@@ -110,7 +117,7 @@ const PostCardStyle = styled.div`
         font-size: 20px;
         border: none;
         margin-left: 20px;
-        background: Var(--main);
+        background: Var(--principal);
         text-decoration: none;
         color: white;
         border-radius: 7px;
@@ -120,35 +127,3 @@ const PostCardStyle = styled.div`
     }
   }
 `;
-
-export function PostCard(props) {
-  return (
-    <PostCardStyle css={CardStyle}>
-      <img src="https://picsum.photos/600/200" alt="" />
-      <div className="postText">
-        <div className="sectionOne">
-          <h1>{props.titulo}</h1>
-          <p>
-            {props.descripcion}
-          </p>
-        </div>
-        <div className="sectionTwo">
-          <h3>Se busca</h3>
-          <ul>
-            <li>
-              <label className="checkContainer">
-                <input type="checkbox" name="" id="" />
-                <span className="checkS"></span>
-              </label>
-              <p>Puesto 1</p>
-            </li>
-          </ul>
-        </div>
-        <div className="buttons">
-          <a href="">Ver mas</a>
-          <button>Postular</button>
-        </div>
-      </div>
-    </PostCardStyle>
-  );
-};

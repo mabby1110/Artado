@@ -1,30 +1,25 @@
 import styled from "@emotion/styled";
 
 export const ProjectBarStyle = styled.div`
-  background-color: var(--fondo_seccion);
-  padding: 0.75rem;
-  border-radius: 0.6rem;
-  color: var(--texto_principal);
-  width: min-content;
-
+  background-color: Var(--fondo_seccion);
+  border-radius: 7px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   align-content: flex-start;
-
+  flex-direction: column;
+  width: min-content;
+  color: white;
   .profilePic{
     text-align:center;
-  }
-
+  } 
   .userPic {
     object-fit: cover;
-    width: 15rem;
-    height: 15rem; 
+    width: 10em;
+    height: 10em;
     border: black solid 4px;
     border-radius: 7px;
-    margin-top: 1rem;
+    margin-top: 2em;
   }
-
   .projectSection1 {
     img {
       vertical-align: super;
@@ -34,7 +29,6 @@ export const ProjectBarStyle = styled.div`
       margin-top: 5px;
     }
   }
-
   .projectSection2 {
     img {
       vertical-align: super;
@@ -44,11 +38,17 @@ export const ProjectBarStyle = styled.div`
       margin-top: 5px;
     }
   }
-
   .barContent {
     h2 {
-      font-size: 24px;
+      font-size: 17px;
+      margin-right: 10px;
+      border-bottom: solid white 1px;
+      padding-bottom: 5px;
       margin: 0;
+      font-weight: normal;
+      margin-top: 1em;
+      margin-left: 5px;
+      margin-bottom: 0.5em;
     }
   }
 `;

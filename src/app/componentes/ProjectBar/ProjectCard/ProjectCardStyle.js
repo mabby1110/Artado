@@ -1,71 +1,74 @@
 import styled from "@emotion/styled";
 
 export const ProjectCardStyle = styled.div`
-  background: gray;
+  background: Var(--fondo_componente);
   color: white;
-  width: 20em;
-  height: 4.2em;
-  border-radius: 15px;
+  width: 16.5em;
+  height: 4.5em;
+  border-radius: 9px;
   position: relative;
-  margin-bottom:5px;
-  img { 
+  margin-bottom: 5px;
+  img {
     object-fit: cover;
-    border-radius: 100%; 
-    width: 3.5em;
-    height: 3.5em;
+    border-radius: 100%;
+    width: 3.3em;
+    height: 3.3em;
     margin: 5px;
   }
   .projectDetail {
     width: max-content;
+    position: absolute;
+    top: 40%;
     p {
       display: inline-block;
       margin: 0;
     }
-    .pRole{
+    .pRole {
       display: inline-block;
-      margin:0;
+      margin: 0;
     }
-    .rStatus{
+    .rStatus {
       display: inline-block;
-      margin:0;
+      margin: 0;
       margin-left: 20px;
     }
     .postulations {
       display: inline-block;
-      margin:0;
+      margin: 0;
     }
     .pStatus {
       display: inline-block;
-      margin:0;
+      margin: 0;
       margin-left: 20px;
     }
-    .nPost {
-      display: block;
-      text-align: right;
-      margin:0;
-      position: absolute;
-      right: 5%;
-      bottom: 0;
-    }
+  }
+  .nPost {
+    margin: 0;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
   }
   .projectText {
     display: inline-block;
     .pState {
-      text-align: right;
+      right: 9px;
       display: inline-block;
-      font-size:14px;
       position: absolute;
-      top: 15%;
-      right: 5%;
+      margin: 0;
+      top: 8px;
+      font-size: 12px;
+      font-weight: normal;
     }
     width: 50%;
     h3 {
-      font-size: 20px;
+      font-size: 15px;
       margin: 0;
+      font-weight: normal;
+      position: absolute;
       display: inline-block;
     }
     p {
-      font-size: 16px;
+      font-size: 11px;
     }
   }
 `;

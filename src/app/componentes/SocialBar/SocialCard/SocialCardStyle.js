@@ -1,13 +1,19 @@
 import styled from '@emotion/styled';
 
 export const SocialCardStyle = styled.div`
-background: gray;
+background: Var(--fondo_componente);
 color: white;
-width: 20em;
+width: 16em;
 height: 4.2em;
-border-radius: 15px;
+border-radius: 9px;
+overflow:hidden;
 position: relative;
-margin-bottom:5px;
+margin-bottom: 5px;
+.filterOnly{
+  padding: 4px 4px;
+  font-size: 10px;
+  margin-bottom: 2px;
+}
 img {
   vertical-align: top;
   object-fit: cover;
@@ -17,16 +23,16 @@ img {
   margin: 5px;
 }
 .socialText {
-  width: 77%;
-  height: 50%;
+  width: 72%;
+  height: 60%;
   display: inline-block;
   h3 {
-    font-size: 20px;
-    margin: 0; 
+    font-size: 15px;
+    margin: 0;
     display: inline-block;
+    font-weight: normal;
   }
   .filterSection{
-    background:red;
     margin:0;
     width: -webkit-fill-available;
     height: -webkit-fill-available; 

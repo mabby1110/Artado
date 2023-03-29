@@ -16,8 +16,8 @@ const ProjectCard1 = () => {
             <p>Estatus:</p>
             <p>##</p>
           </div>
-          <p className="nPost">#/#</p>
         </div>
+        <p className="nPost">#/#</p>
       </div>
     </ProjectCardStyle>
   );
