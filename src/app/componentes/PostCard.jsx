@@ -8,7 +8,9 @@ import { css } from "@emotion/react";
 import { CardStyle } from "../Ye";
 
 const PostCardStyle = styled.div`
-  padding-bottom: 1em;
+  background-color: var(--fondo_componente);
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
   border-radius: 10px;
   overflow: hidden;
   width: 50em;
@@ -19,8 +21,7 @@ const PostCardStyle = styled.div`
   }
   .postText {
     margin-top: 15px;
-    background: Var(--fondo_componente);
-    color: Var(--texto_primario);
+    color: Var(--texto_principal);
     .sectionOne {
       margin-left: 10px;
       display: inline-block;
@@ -109,7 +110,7 @@ const PostCardStyle = styled.div`
         font-size: 20px;
         border: none;
         margin-left: 20px;
-        background: Var(--principal);
+        background: Var(--main);
         text-decoration: none;
         color: white;
         border-radius: 7px;

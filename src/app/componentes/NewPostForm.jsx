@@ -1,12 +1,10 @@
 /** @jsxImportSource @emotion/react */
-import React, {useState, useEffect, useRef} from "react";
-import { css } from "@emotion/react";
-import { set } from "mongoose";
+import React, {useState, useRef} from "react";
 
 // css global
-import { NewPostStyle } from "../Ye";
+import { NewPostFormStyle } from "../Ye";
 
-export function NewPost() {
+export function NewPostForm() {
   let Publicacion = {
     Titulo: '',
     Descripcion: '',
@@ -70,7 +68,7 @@ export function NewPost() {
   }
 
   return (
-    <NewPostStyle>
+    <NewPostFormStyle>
       <form onSubmit={(e) => PostPublicacion(e)}>
         <div>
           <h1>Titulo</h1>
@@ -116,6 +114,6 @@ export function NewPost() {
         <br />
         <button type="submit">Publicar</button>
       </form>
-    </NewPostStyle>
+    </NewPostFormStyle>
   )
 }

@@ -1,7 +1,7 @@
 /* Pink (Common styles) */
 :root {
-    --principal: #170e25;
-    --texto_primario: #FFFFFF;
+    --main: #170e25;
+    --texto_principal: #FFFFFF;
     --texto_secundario: #B8B2C0;
     --fondo: #000000;
     --fondo_seccion: #101010;

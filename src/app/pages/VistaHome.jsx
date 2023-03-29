@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react"
 
 // componentes
-import { NewPost } from "../componentes/NewPost"
 import { PostCard } from "../componentes/PostCard"
 import { SearchBar } from "../componentes/SearchBar"
 
