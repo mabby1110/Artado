@@ -2,8 +2,9 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/react';
 
 export const PostCardStyle = styled.div`
+  background-color: Var(--fondo_componente);
+  border-radius: 10px;
   padding-bottom: 3em;
-  width: auto;
   position: relative;
   overflow: hidden;
   img {
@@ -12,8 +13,6 @@ export const PostCardStyle = styled.div`
     object-fit: cover;
   }
   .postText {
-    background: Var(--fondo_componente);
-    color: Var(--texto_primario);
     .sectionOne {
       margin-left: 10px;
       display: inline-block;
@@ -104,7 +103,6 @@ export const PostCardStyle = styled.div`
       text-align: right;
       margin-right: 10px;
       a {
-        color: white;
         vertical-align: middle;
       }
       button {
@@ -113,7 +111,6 @@ export const PostCardStyle = styled.div`
         margin-left: 20px;
         background: Var(--principal);
         text-decoration: none;
-        color: white;
         border-radius: 7px;
         font-size: 20px;
         padding: 4px 20px;

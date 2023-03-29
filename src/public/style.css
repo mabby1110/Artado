@@ -1,6 +1,6 @@
 /* Pink (Common styles) */
 :root {
-    --main: #170e25;
+    --principal: #170e25;
     --texto_principal: #FFFFFF;
     --texto_secundario: #B8B2C0;
     --fondo: #000000;
@@ -9,9 +9,15 @@
 }
 
 body {
-    color: var(--texto_primario);
+    color: var(--texto_principal);
     background-color: var(--fondo);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 10px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }

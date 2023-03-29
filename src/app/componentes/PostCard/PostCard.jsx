@@ -2,7 +2,7 @@
 
 // css global
 
-import {CardStyle,PostCardStyle} from "./PostCardStyle"
+import {PostCardStyle} from "./PostCardStyle"
 
 export function PostCard(props) {
   return (

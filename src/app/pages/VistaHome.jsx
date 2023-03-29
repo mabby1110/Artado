@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from "react"
 
 // componentes
-import { SearchBar } from "../componentes/SearchBar/SearchBar"
-import { ProjectBar } from "../componentes/ProjectBar/ProjectBar"
-import { SocialBar } from "../componentes/SocialBar/SocialBar"
-import { PostCard } from "../componentes/MainPosts/PostCard"
+import { PostCard } from "../componentes/PostCard/PostCard"
 
 // css
 import { HomeSectionStyle } from "../Ye"

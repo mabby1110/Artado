@@ -10,19 +10,23 @@ import { Login } from './pages/VistaLogin'
 
 // componentes
 import { NavBar } from "./componentes/NavBar/NavBar"
+import { ProjectBar } from "./componentes/ProjectBar/ProjectBar"
+import { SocialBar } from "./componentes/SocialBar/SocialBar"
 
 export default function App() {
   return (
     <BrowserRouter>
       <NavBar/>
-      {/* <ProjectBar/> */}
-      <Routes> 
-        <Route path='/' element={<Home/>}/>
-        <Route path="/perfil" element={<Perfil/>} />
-        <Route path="/proyectos" element={<Proyectos/>} />
-        <Route path="/login" element={<Login/>} />
-      </Routes>
-      {/* <SocialBar/> */}
+      <div className="main">
+        <ProjectBar/>
+        <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path="/perfil" element={<Perfil/>} />
+            <Route path="/proyectos" element={<Proyectos/>} />
+            <Route path="/login" element={<Login/>} />
+        </Routes>
+        <SocialBar/>
+      </div>
     </BrowserRouter>
   )
 }

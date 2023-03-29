@@ -6,7 +6,6 @@ export const NavBarStyle = styled.nav`
   margin-bottom: 1rem;
   padding: 1.5em;
   a {
-    color: var(--texto_principal);
     text-decoration: none;
     padding: 0 1.125rem;
   }
