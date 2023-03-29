@@ -7,6 +7,7 @@ export const NavBarStyle = styled.nav`
   padding: 1.5em;
   a {
     text-decoration: none;
+    color: var(--texto_principal);
     padding: 0 1.125rem;
   }
   .navContent{
