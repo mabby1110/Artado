@@ -1,8 +1,8 @@
-import React from "react";
-import { ProjectBarStyle } from "./ProjectBarStyle";
-import { ProjectCard1, ProjectCard2 } from "./ProjectCard/ProjectCard";
+import React from "react"
+import { ProjectBarStyle } from "./ProjectBarStyle"
+import { ProjectCard1, ProjectCard2 } from "./ProjectCard/ProjectCard"
 
-const ProjectBar = () => {
+export function ProjectBar() {
   return (
     <ProjectBarStyle className="ProjectBar">
       <div className="profilePic">
@@ -22,7 +22,5 @@ const ProjectBar = () => {
         </div>
       </div>
     </ProjectBarStyle>
-  );
-};
-
-export default ProjectBar;
+  )
+}

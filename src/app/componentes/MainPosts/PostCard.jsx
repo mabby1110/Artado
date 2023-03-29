@@ -6,7 +6,7 @@ import {CardStyle,PostCardStyle} from "./PostCardStyle"
 
 export function PostCard(props) {
   return (
-    <PostCardStyle css={CardStyle}>
+    <PostCardStyle>
       <img src="https://picsum.photos/600/200" alt="" />
       <div className="postText">
         <div className="sectionOne">

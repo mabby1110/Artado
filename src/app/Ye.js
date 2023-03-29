@@ -7,6 +7,14 @@ export const MainSectionStyle = styled.div`
   padding: 0.75rem;
 `
 
+export const HomeSectionStyle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+`
+
 export const NavBarStyle = styled.nav`
   background-color: var(--main);
   height: 5.25rem;

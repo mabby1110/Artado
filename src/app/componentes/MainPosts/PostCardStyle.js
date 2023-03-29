@@ -1,16 +1,10 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react';
 
-export const CardStyle = css({
-    backgroundColor: 'Var(--fondo_componente)',
-    marginBottom: '0.75rem'
-  })
-
 export const PostCardStyle = styled.div`
   padding-bottom: 3em;
-  width: 100%;
-  border-radius: 10px;
-  position:relative;
+  width: auto;
+  position: relative;
   overflow: hidden;
   img {
     width: 100%;

@@ -1,8 +1,8 @@
-import React from "react";
-import { SocialBarStyle } from "./SocialBarStyle";
-import SocialCard from "./SocialCard/SocialCard";
+import React from "react"
+import { SocialBarStyle } from "./SocialBarStyle"
+import SocialCard from "./SocialCard/SocialCard"
 
-const SocialBar = () => {
+export function SocialBar() {
   return (
     <SocialBarStyle>
       <div className="titleSection">
@@ -17,7 +17,5 @@ const SocialBar = () => {
         </div>
       </div>
     </SocialBarStyle>
-  );
-};
-
-export default SocialBar;
+  )
+}

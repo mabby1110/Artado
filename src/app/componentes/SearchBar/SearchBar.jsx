@@ -2,8 +2,8 @@ import React from "react";
 import { useState, useRef } from "react";
 
 // css global
-import { SearchBarStyle } from "../Ye"
-import { NewPostForm } from "./NewPostForm";
+import { SearchBarStyle } from "../../Ye";
+import { NewPostForm } from "../NewPost/NewPostForm";
 
 export function SearchBar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);

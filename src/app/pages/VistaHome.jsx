@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from "react"
 
 // componentes
-import { PostCard } from "../componentes/PostCard"
-import { SearchBar } from "../componentes/SearchBar"
+import { SearchBar } from "../componentes/SearchBar/SearchBar"
+import { ProjectBar } from "../componentes/ProjectBar/ProjectBar"
+import { SocialBar } from "../componentes/SocialBar/SocialBar"
+import { PostCard } from "../componentes/MainPosts/PostCard"
 
-// css global
-import { MainSectionStyle } from "../Ye"
-import { SearchBarStyle } from "../Ye"
+// css
+import { HomeSectionStyle } from "../Ye"
 
 export function Home() {
     const [Datos, setDatos] = useState([])
@@ -28,17 +29,18 @@ export function Home() {
     }, [])
 
     return (
-        <div className="MainSection">  
-            <SearchBar/>
-            <MainSectionStyle>
-                {
-                    Datos.map((items)=>{
-                        return (
-                            <PostCard key={items._id} titulo={items.Titulo} descripcion={items.Descripcion}/>
-                        )
-                    })
-                }
-            </MainSectionStyle>
-        </div>
+        <HomeSectionStyle>
+            {
+                Datos.map((items) => {
+                    return (
+                        <PostCard
+                            key={items._id}
+                            titulo={items.Titulo}
+                            descripcion={items.Descripcion}
+                        />
+                    )
+                })
+            }
+        </HomeSectionStyle>
     )
 }

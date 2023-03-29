@@ -2,7 +2,7 @@
 import React, {useState, useRef} from "react";
 
 // css global
-import { NewPostFormStyle } from "../Ye";
+import { NewPostFormStyle } from "../../Ye";
 
 export function NewPostForm() {
   let Publicacion = {

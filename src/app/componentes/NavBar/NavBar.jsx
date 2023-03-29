@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from "react"
+import { NavLink } from "react-router-dom"
 // css global
-import { NavBarStyle } from "./NavBarStyle";
+import { NavBarStyle } from "./NavBarStyle"
 
 export function NavBar() {
   return (
@@ -12,5 +12,5 @@ export function NavBar() {
         <NavLink to="/perfil">Perfil</NavLink>
       </div>
     </NavBarStyle>
-  );
+  )
 }
