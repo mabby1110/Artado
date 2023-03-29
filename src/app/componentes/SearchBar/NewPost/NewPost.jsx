@@ -2,9 +2,9 @@
 import React, {useState, useRef} from "react";
 
 // css global
-import { NewPostFormStyle } from "../../Ye";
+import { NewPostStyle } from "./NewPostStyle";
 
-export function NewPostForm() {
+export function NewPost() {
   let Publicacion = {
     Titulo: '',
     Descripcion: '',
@@ -68,7 +68,7 @@ export function NewPostForm() {
   }
 
   return (
-    <NewPostFormStyle>
+    <NewPostStyle>
       <form onSubmit={(e) => PostPublicacion(e)}>
         <div>
           <h1>Titulo</h1>
@@ -114,6 +114,6 @@ export function NewPostForm() {
         <br />
         <button type="submit">Publicar</button>
       </form>
-    </NewPostFormStyle>
+    </NewPostStyle>
   )
 }

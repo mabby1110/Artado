@@ -1,6 +1,7 @@
 import React from "react";
+
 import { SocialCardStyle } from "./SocialCardStyle";
-import Filter from "../../FilterBar/Filter/Filter"
+import { Label } from "../../Label/Label";
 
 const SocialCard = () => {
   return (
@@ -9,14 +10,14 @@ const SocialCard = () => {
       <div className="socialText">
         <h3>User Name</h3>
         <div className="filterSection">
-          <Filter/>
-          <Filter/>
-          <Filter/>
-          <Filter/>
-          <Filter/>
-          <Filter/>
-          <Filter/>
-          <Filter/>
+          <Label/>
+          <Label/>
+          <Label/>
+          <Label/>
+          <Label/>
+          <Label/>
+          <Label/>
+          <Label/>
         </div>
       </div>
     </SocialCardStyle>

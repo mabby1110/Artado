@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useRef } from "react";
 
-// css global
-import { SearchBarStyle } from "../../Ye";
-import { NewPostForm } from "../NewPost/NewPostForm";
+import { SearchBarStyle } from "./SearchBarStyle";
+import { NewPost } from "./NewPost/NewPost";
+import { FilterBar } from "../FilterBar/FilterBar";
 
 export function SearchBar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,8 +18,9 @@ export function SearchBar() {
             <SearchBarStyle>
                 <input className="searchInput" type="text" />
                 <input className="newPostBtn" type="button" value={isSidebarOpen ? '^' : '+'} ref={ref_btn} onClick={()=>toggleSidebar()}/>
+                <FilterBar/>
             </SearchBarStyle>
-            {isSidebarOpen && <NewPostForm className="form" />}
+            {isSidebarOpen && <NewPost className="form" />}
         </div>
     )
 }

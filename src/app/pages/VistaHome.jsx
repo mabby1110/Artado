@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 
 // componentes
 import { PostCard } from "../componentes/PostCard/PostCard"
+import { SearchBar } from "../componentes/SearchBar/SearchBar"
 
 // css
 import { HomeSectionStyle } from "../Ye"
@@ -26,18 +27,21 @@ export function Home() {
     }, [])
 
     return (
-        <HomeSectionStyle>
-            {
-                Datos.map((items) => {
-                    return (
-                        <PostCard
-                            key={items._id}
-                            titulo={items.Titulo}
-                            descripcion={items.Descripcion}
-                        />
-                    )
-                })
-            }
-        </HomeSectionStyle>
+        <div>
+            <SearchBar/>
+            <HomeSectionStyle>
+                {
+                    Datos.map((items) => {
+                        return (
+                            <PostCard
+                                key={items._id}
+                                titulo={items.Titulo}
+                                descripcion={items.Descripcion}
+                            />
+                        )
+                    })
+                }
+            </HomeSectionStyle>
+        </div>
     )
 }

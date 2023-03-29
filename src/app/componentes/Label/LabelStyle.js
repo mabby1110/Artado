@@ -1,9 +1,10 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
-export const FilterStyle = styled.div`
+export const LabelStyle = styled.div`
   display: inline-block;
   .filterOnly {
     background: #353232;
+    height: 0.6rem;
     padding: 10px 5px;
     margin: 0;
     border-radius: 14px;
@@ -12,9 +13,8 @@ export const FilterStyle = styled.div`
     flex-wrap: wrap;
     margin-bottom: 5px;
     text-align: center;
-    display: inline-block;
     p {
       margin: 0;
     }
   }
-`;
+`
