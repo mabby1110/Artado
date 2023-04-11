@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const SocialBarStyle = styled.div`
 background-color: Var(--fondo_seccion);
 color: white;
-width: min-content;
+max-width: 66rem;
 padding: 5px;
 border-radius:10px;
 display: flex;

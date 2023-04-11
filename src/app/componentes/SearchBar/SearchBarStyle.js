@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const SearchBarStyle = styled.nav`
   background-color: var(--fondo);
   margin-bottom: 0.75rem;
-
+  max-width: 66rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

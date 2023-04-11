@@ -3,7 +3,7 @@ import React from "react"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 // vistas
-import { Home } from './pages/VistaHome'
+import { Home } from './pages/VistaHome/VistaHome'
 import { Perfil } from './pages/VistaPerfil'
 import { Proyectos } from './pages/VistaProyectos'
 import { Login } from './pages/VistaLogin'

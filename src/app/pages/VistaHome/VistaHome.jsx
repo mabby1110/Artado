@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react"
 
 // componentes
-import { PostCard } from "../componentes/PostCard/PostCard"
-import { SearchBar } from "../componentes/SearchBar/SearchBar"
+import { PostCard } from "../../componentes/PostCard/PostCard"
+import { SearchBar } from "../../componentes/SearchBar/SearchBar"
 
 // css
-import { HomeSectionStyle } from "../Ye"
+import { VistaHomeStyle } from "./VistaHomeStyle"
 
 export function Home() {
     const [Datos, setDatos] = useState([])
@@ -27,9 +27,9 @@ export function Home() {
     }, [])
 
     return (
-        <div>
+        <VistaHomeStyle>
             <SearchBar/>
-            <HomeSectionStyle>
+            <div className="feed-section">
                 {
                     Datos.map((items) => {
                         return (
@@ -41,7 +41,7 @@ export function Home() {
                         )
                     })
                 }
-            </HomeSectionStyle>
-        </div>
+            </div>
+        </VistaHomeStyle>
     )
 }

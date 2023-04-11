@@ -5,20 +5,23 @@ export const ProjectBarStyle = styled.div`
   border-radius: 7px;
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-content: center;
   flex-direction: column;
-  width: min-content;
+  max-width: min-content;
+  min-width: 23.75rem;
+  height: min-content;
+  padding: 0.625rem;
   color: white;
   .profilePic{
     text-align:center;
+    padding: 2rem;
   } 
   .userPic {
     object-fit: cover;
-    width: 10em;
-    height: 10em;
+    width: 15.625rem;
+    height: 15.625rem;
     border: black solid 4px;
     border-radius: 7px;
-    margin-top: 2em;
   }
   .projectSection1 {
     img {
@@ -50,5 +53,15 @@ export const ProjectBarStyle = styled.div`
       margin-left: 5px;
       margin-bottom: 0.5em;
     }
+  }
+  .toggle-button {
+    border-style: none;
+    width: min-content;
+    align-self:center;
+    color: var(--texto_secundario);
+    font-size: 1em;
+  }
+  .barContent.open {
+    display: none;
   }
 `;

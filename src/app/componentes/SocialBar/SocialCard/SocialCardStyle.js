@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 export const SocialCardStyle = styled.div`
 background: Var(--fondo_componente);
 color: white;
-width: 16em;
-height: 4.2em;
+min-width: 23.75rem;
+height: min-content;
 border-radius: 9px;
 overflow:hidden;
 position: relative;

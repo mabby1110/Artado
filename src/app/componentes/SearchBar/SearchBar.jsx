@@ -14,13 +14,11 @@ export function SearchBar() {
     }
 
     return (
-        <div className="SearchBar">
-            <SearchBarStyle>
-                <input className="searchInput" type="text" />
-                <input className="newPostBtn" type="button" value={isSidebarOpen ? '^' : '+'} ref={ref_btn} onClick={()=>toggleSidebar()}/>
-                <FilterBar/>
-            </SearchBarStyle>
+        <SearchBarStyle>
+            <input className="searchInput" type="text" />
+            <input className="newPostBtn" type="button" value={isSidebarOpen ? '^' : '+'} ref={ref_btn} onClick={()=>toggleSidebar()}/>
+            <FilterBar/>
             {isSidebarOpen && <NewPost className="form" />}
-        </div>
+        </SearchBarStyle>
     )
 }

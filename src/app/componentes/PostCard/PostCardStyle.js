@@ -7,6 +7,7 @@ export const PostCardStyle = styled.div`
   padding-bottom: 3em;
   position: relative;
   overflow: hidden;
+  max-width: 66rem;
   img {
     width: 100%;
     height: 17em;
