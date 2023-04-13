@@ -3,16 +3,47 @@ import { css } from '@emotion/react';
 
 export const PostCardStyle = styled.div`
   background-color: Var(--fondo_componente);
-  border-radius: 10px;
+  border-radius: 12px;
+
+  display: grid;
+  grid-template-columns: minmax(auto, 1056px);
+  grid-template-rows: 6fr 5fr auto;
+  
+  .postImg {
+    grid-area: 1 / 1 / 2 / 4;
+    display: flex;
+    img {
+      width: 0;
+      flex-grow: 1;
+    }
+  }
+  
+  .postInfo {
+    grid-area: 2 / 1 / 3 / 4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .sectionOne {
+      flex-grow: 2;
+      flex-shrink: 1;
+    }
+    .sectionTwo {
+      flex-grow: 1;
+      flex-shrink: 3;
+    }
+  }
+
+  .postBtn {
+    grid-area: 3 / 3 / 4 / 4;
+  }
+  /*
   padding-bottom: 3em;
   position: relative;
   overflow: hidden;
-  max-width: 66rem;
-  img {
-    width: 100%;
-    height: 17em;
-    object-fit: cover;
-  }
+  min-width: auto;
+  max-width: 1056px;
+
   .postText {
     .sectionOne {
       margin-left: 10px;
@@ -117,5 +148,5 @@ export const PostCardStyle = styled.div`
         padding: 4px 20px;
       }
     }
-  }
+  } */
 `;

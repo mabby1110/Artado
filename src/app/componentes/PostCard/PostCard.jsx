@@ -7,13 +7,13 @@ import {PostCardStyle} from "./PostCardStyle"
 export function PostCard(props) {
   return (
     <PostCardStyle>
-      <img src="https://picsum.photos/600/200" alt="" />
-      <div className="postText">
+      <div className="postImg">
+        <img src="https://picsum.photos/600/200" alt="" />
+      </div>
+      <div className="postInfo">
         <div className="sectionOne">
           <h1>{props.titulo}</h1>
-          <p>
-            {props.descripcion}
-          </p>
+          <p>{props.descripcion}</p>
         </div>
         <div className="sectionTwo">
           <h3>Se busca</h3>
@@ -27,10 +27,10 @@ export function PostCard(props) {
             </li>
           </ul>
         </div>
-        <div className="buttons">
-          <a href="">Ver mas</a>
-          <button>Postular</button>
-        </div>
+      </div>
+      <div className="postBtn">
+        <a href="">Ver mas</a>
+        <button>Postular</button>
       </div>
     </PostCardStyle>
   );

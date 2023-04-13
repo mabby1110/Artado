@@ -4,7 +4,6 @@ export const VistaHomeStyle = styled.div`
   grid-column: 2 / 3;
 
   border-radius: 10px;
-  max-width: 1080rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
