@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const ProjectCardStyle = styled.div`
   background: Var(--fondo_componente);
   color: white;
-  min-width: 23.75rem;
+  width: 376px;
   height: 4.5em;
   border-radius: 9px;
   position: relative;

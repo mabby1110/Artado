@@ -6,22 +6,23 @@ export const ProjectBarStyle = styled.div`
 
   background-color: Var(--fondo_seccion);
   border-radius: 7px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  flex-direction: column;
   max-width: min-content;
-  min-width: 23.75rem;
   height: min-content;
   padding: 0.625rem;
   color: white;
 
+  display: flex;
+  align-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+
   .toggle-button {
     border-style: none;
-    width: min-content;
-    align-self:center;
-    color: var(--texto_secundario);
-    font-size: 1em;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    color: var(--texto_principal);
+    font-size: 1.4em;
   }
   .projectBarContent.open {
     display: none;
