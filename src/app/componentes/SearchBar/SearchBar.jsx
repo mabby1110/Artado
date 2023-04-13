@@ -7,15 +7,15 @@ import { FilterBar } from "../FilterBar/FilterBar";
 
 export function SearchBar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const ref = useRef(null)
+    const ref_searchBar = useRef(null)
 
     const toggleSidebar = () => {
       setIsSidebarOpen(!isSidebarOpen);
-      isSidebarOpen ? ref.current.style.gridArea = "1 / 2 / 2 / 3" : ref.current.style.gridArea = "1 / 2 / 3 / 3";
+      isSidebarOpen ? ref_searchBar.current.style.gridArea = "1 / 2 / 2 / 3" : ref_searchBar.current.style.gridArea = "1 / 2 / 3 / 3";
     }
 
     return (
-        <SearchBarStyle ref={ref}>
+        <SearchBarStyle ref={ref_searchBar}>
             <input className="searchInput" type="text" />
             <input className="newPostBtn" type="button" value={isSidebarOpen ? '^' : '+'}  onClick={()=>toggleSidebar()}/>
             <FilterBar/>

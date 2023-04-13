@@ -15,6 +15,18 @@ export const ProjectBarStyle = styled.div`
   height: min-content;
   padding: 0.625rem;
   color: white;
+
+  .toggle-button {
+    border-style: none;
+    width: min-content;
+    align-self:center;
+    color: var(--texto_secundario);
+    font-size: 1em;
+  }
+  .projectBarContent.open {
+    display: none;
+  }
+
   .profilePic{
     text-align:center;
     padding: 2rem;
@@ -56,15 +68,5 @@ export const ProjectBarStyle = styled.div`
       margin-left: 5px;
       margin-bottom: 0.5em;
     }
-  }
-  .toggle-button {
-    border-style: none;
-    width: min-content;
-    align-self:center;
-    color: var(--texto_secundario);
-    font-size: 1em;
-  }
-  .barContent.open {
-    display: none;
   }
 `;

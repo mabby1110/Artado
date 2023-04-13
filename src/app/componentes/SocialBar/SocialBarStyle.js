@@ -15,6 +15,18 @@ min-width: 23.75rem;
 height: min-content;
 padding: 0.625rem;
 color: white;
+
+.toggle-button {
+  border-style: none;
+  width: min-content;
+  align-self:center;
+  color: var(--texto_secundario);
+  font-size: 1em;
+}
+.socialBarContent.open {
+  display: none;
+}
+
 .titleSection{
   display: inline-block;
   h2{ 
