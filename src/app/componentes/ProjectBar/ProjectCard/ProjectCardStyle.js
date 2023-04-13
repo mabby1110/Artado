@@ -1,13 +1,15 @@
 import styled from "@emotion/styled";
 
 export const ProjectCardStyle = styled.div`
+  flex-grow: 1;
+
   background: Var(--fondo_componente);
   color: white;
-  width: 376px;
   height: 4.5em;
   border-radius: 9px;
   position: relative;
   margin-bottom: 5px;
+  
   img {
     object-fit: cover;
     border-radius: 100%;

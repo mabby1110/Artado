@@ -24,8 +24,16 @@ background-color: Var(--fondo_seccion);
   color: var(--texto_principal);
   font-size: 1.4em;
 }
+
+.socialBarContent {
+  width: 356px;
+  transition: all 0.4s ease-out;
+}
 .socialBarContent.open {
-  display: none;
+  width: 0;
+  div, h2 {
+    display: none;
+  }
 }
 
 .titleSection{

@@ -1,14 +1,18 @@
 import styled from '@emotion/styled';
 
 export const SocialCardStyle = styled.div`
+flex-grow: 1;
+
 background: Var(--fondo_componente);
 color: white;
-min-width: 23.75rem;
-height: min-content;
+height: 4.5em;
 border-radius: 9px;
+position: relative;
+margin-bottom: 5px;
 overflow:hidden;
 position: relative;
 margin-bottom: 5px;
+
 .filterOnly{
   padding: 4px 4px;
   font-size: 10px;
