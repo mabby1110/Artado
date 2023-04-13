@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 
 export const NavBarStyle = styled.nav`
-  background-color: var(--principal);
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  padding: 1.5em;
+  grid-area: 1 / 1 / 2 / 2;
+
+  background-color: var(--fondo_seccion);
   a {
     text-decoration: none;
     color: var(--texto_principal);

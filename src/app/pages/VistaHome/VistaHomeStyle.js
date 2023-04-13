@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
 export const VistaHomeStyle = styled.div`
+  grid-column: 2 / 3;
+
   border-radius: 10px;
   max-width: 1080rem;
   display: flex;
@@ -11,10 +13,11 @@ export const VistaHomeStyle = styled.div`
 
   .feed-section {
     background-color: var(--fondo_seccion);
-    display: flex;
     padding: 0.625rem;
     border-radius: 10px;
-    flex-direction: column;
+
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 0.8rem 0.625rem;
   }

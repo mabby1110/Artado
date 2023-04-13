@@ -28,7 +28,6 @@ export function Home() {
 
     return (
         <VistaHomeStyle>
-            <SearchBar/>
             <div className="feed-section">
                 {
                     Datos.map((items) => {

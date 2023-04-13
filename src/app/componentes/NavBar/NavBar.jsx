@@ -7,9 +7,7 @@ export function NavBar() {
   return (
     <NavBarStyle className="NavBar">
       <div className="navContent">
-        <NavLink to="/proyectos">Proyectos</NavLink>
         <NavLink to="/">ARTADO</NavLink>
-        <NavLink to="/perfil">Perfil</NavLink>
       </div>
     </NavBarStyle>
   )

@@ -1,6 +1,9 @@
 import styled from "@emotion/styled";
 
 export const ProjectBarStyle = styled.div`
+  grid-area: 2 / 1 / 4 / 2;
+  justify-self: right;
+
   background-color: Var(--fondo_seccion);
   border-radius: 7px;
   display: flex;

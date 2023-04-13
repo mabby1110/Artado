@@ -18,6 +18,7 @@ body {
 
 .main {
     display: grid;
-    grid-template-columns: minmax(380px, 400px) auto minmax(380px, 400px);
+    grid-template-columns: auto minmax(400px, 1080px) auto;
+    grid-template-rows: 122px auto auto;
     gap: 20px;
 }

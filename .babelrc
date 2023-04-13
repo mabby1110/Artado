@@ -16,5 +16,7 @@
             }
         ]
     ],
-    "plugins": ["@emotion"]
+    "plugins": [
+        ["@emotion"]
+    ]
 }

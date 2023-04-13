@@ -1,14 +1,20 @@
 import styled from '@emotion/styled';
 
 export const SocialBarStyle = styled.div`
+grid-area: 2 / 3 / 3 / 4;
+justify-self: left;
+
 background-color: Var(--fondo_seccion);
-color: white;
-max-width: 66rem;
-padding: 5px;
-border-radius:10px;
+border-radius: 7px;
 display: flex;
-flex-wrap: wrap; 
+flex-wrap: wrap;
+align-content: center;
 flex-direction: column;
+max-width: min-content;
+min-width: 23.75rem;
+height: min-content;
+padding: 0.625rem;
+color: white;
 .titleSection{
   display: inline-block;
   h2{ 

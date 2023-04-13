@@ -1,12 +1,7 @@
 import styled from "@emotion/styled";
 
 export const SearchBarStyle = styled.nav`
-  background-color: var(--fondo);
-  margin-bottom: 0.75rem;
-  max-width: 66rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  grid-area: 1 / 2 / 2 / 3;
 
   .searchInput {
     border-radius: 10px;
@@ -19,5 +14,9 @@ export const SearchBarStyle = styled.nav`
     border-radius: 10px;
     font-size: 1.2em;
     flex-basis: 8%;
+  }
+
+  .span-2 {
+    grid-row: span 2;
   }
 `
