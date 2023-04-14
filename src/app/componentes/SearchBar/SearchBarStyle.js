@@ -1,22 +1,54 @@
 import styled from "@emotion/styled";
 
 export const SearchBarStyle = styled.nav`
-  grid-area: 1 / 2 / 2 / 3;
+
+  display: grid;
+  grid-template-columns: auto 35px 35px;
+  grid-template-rows: 35px 35px auto;
+  height: fit-content;
 
   .searchInput {
-    border-radius: 10px;
-    height: 2.5rem;
-    flex-basis: 90%;
-    font-size: 1.2em;
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    
+    input {
+      flex: 1;
+      border: none;
+      border-radius: 12px;
+      outline: none;
+      font-size: 1.2em;
+    }
+  }
+
+  .searchBtn {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    
+    input {
+      flex: 1;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 1.2em;
+    }
   }
 
   .newPostBtn {
-    border-radius: 10px;
-    font-size: 1.2em;
-    flex-basis: 8%;
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    
+    input {
+      flex: 1;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 1.2em;
+    }
   }
 
-  .span-2 {
-    grid-row: span 2;
+  .filterSection {
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    overflow: hidden;
   }
 `

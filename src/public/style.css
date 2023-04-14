@@ -4,7 +4,7 @@
     --texto_principal: #FFFFFF;
     --texto_secundario: #B8B2C0;
     --fondo: #000000;
-    --fondo_seccion: #73ff00;
+    --fondo_seccion: #101010;
     --fondo_componente: #252525;
 }
 
@@ -19,6 +19,6 @@ body {
 .main {
     display: grid;
     grid-template-columns: auto minmax(400px, 1080px) auto;
-    grid-template-rows: 122px auto auto;
+    grid-template-rows: 80px auto auto;
     gap: 20px;
 }
