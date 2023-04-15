@@ -1,16 +1,11 @@
 import styled from "@emotion/styled";
 
 export const ProjectsCardStyle = styled.div`
-  margin: 10px;
-  .contentAlign {
-    text-align: center;
-    width: 54.5rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  flex-grow: 1;
+  display: flex;
+
   .sectionContent {
+    flex-grow: 1;
     text-align: center;
     width: 54.5rem;
     position: relative;

@@ -10,24 +10,17 @@ import { UserSectionStyle } from "./VistaPerfilStyle";
 export function Perfil() {
   return (
     <UserSectionStyle>
-      <div className="userSection1">
-        <div className="userTopSection">
-          <UserCard />
-          <img src="https://picsum.photos/300" alt="" className="userBanner" />
-        </div>
-        <div className="userDownSection">
-          <div className="downSubSection2">
-            <div className="userInfoSection">
-              <AboutCard />
-            </div>
-            <div className="userInfoSection">
-              <ProjectsCard />
-            </div>
-            <div className="userInfoSection">
-              <GalleryCard />
-            </div>
-          </div>
-        </div>
+      <div className="userProfileBanner">
+        <img src="https://picsum.photos/600/200" alt="" className="userBanner" />
+      </div>
+      <div className="userInfoSection">
+        <AboutCard />
+      </div>
+      <div className="userInfoSection">
+        <ProjectsCard />
+      </div>
+      <div className="userInfoSection">
+        <GalleryCard />
       </div>
     </UserSectionStyle>
   );
