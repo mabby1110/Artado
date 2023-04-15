@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom"
 
 // vistas
 import { Home } from './pages/VistaHome/VistaHome'
-import { Perfil } from './pages/VistaPerfil'
+import { Perfil } from './pages//VistaPerfil/VistaPerfil'
 import { Proyectos } from './pages/VistaProyectos'
 import { Login } from './pages/VistaLogin'
 

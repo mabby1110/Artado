@@ -1,5 +1,5 @@
 import React from "react";
-import Filter  from "../FilterBar/Filter/Filter";
+import { Label } from "../Label/Label";
 import { UserCardStyle } from "./UserCardStyle";
 
 const UserCard = () => {
@@ -7,9 +7,9 @@ const UserCard = () => {
     <UserCardStyle>
       <img src="https://picsum.photos/200/300" alt="" className="userPic" />
       <div className="userFilter">
-        <Filter/>
-        <Filter/>
-        <Filter/>
+        <Label/>
+        <Label/>
+        <Label/>
       </div>
       <div className="userName">
         <h3>Nombre usuario</h3>
