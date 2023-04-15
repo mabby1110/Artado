@@ -5,7 +5,7 @@ import AboutCard from "./UserInfo/About/AboutCard";
 import ProjectsCard from "./UserInfo/Projects/ProjectsCard";
 import GalleryCard from "./UserInfo/Gallery/GalleryCard";
 
-import { UserSectionStyle } from "../Ye";
+import { UserSectionStyle } from "./VistaPerfilStyle";
 
 export function Perfil() {
   return (
