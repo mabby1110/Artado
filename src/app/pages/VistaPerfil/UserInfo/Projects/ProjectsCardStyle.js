@@ -2,12 +2,17 @@ import styled from "@emotion/styled";
 
 export const ProjectsCardStyle = styled.div`
   flex-grow: 1;
+  margin: 10px;
   display: flex;
-
+  flex-direction: column;
+  .scrollContainer{
+    flex-grow: 1;
+    display: flex;
+  }
   .sectionContent {
     flex-grow: 1;
     text-align: center;
-    width: 54.5rem;
+    width: 0rem;
     position: relative;
     display: flex;
     align-items: center;

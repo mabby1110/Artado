@@ -9,7 +9,10 @@ export const ProjectCardStyle = styled.div`
   border-radius: 9px;
   position: relative;
   margin-bottom: 5px;
-  
+  transition: 1s;
+  :hover{
+    filter: brightness(1.3);
+  }
   img {
     object-fit: cover;
     border-radius: 100%;

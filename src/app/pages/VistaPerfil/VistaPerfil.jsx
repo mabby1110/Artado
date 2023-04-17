@@ -11,7 +11,15 @@ export function Perfil() {
   return (
     <UserSectionStyle>
       <div className="userProfileBanner">
-        <img src="https://picsum.photos/600/200" alt="" className="userBanner" />
+      <div className="picFilter" />
+        <img
+          src="https://picsum.photos/600/200"
+          alt=""
+          className="userBanner"
+        />
+        <div className="userPic">
+          <img src="https://picsum.photos/200" alt="" className="userImg" />
+        </div>
       </div>
       <div className="userInfoSection">
         <AboutCard />

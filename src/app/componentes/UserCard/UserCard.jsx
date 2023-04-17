@@ -21,7 +21,7 @@ const UserCard = () => {
           morbi mauris id.
         </h3>
       </div>
-      <a href="">Ver perfil</a>
+      <a href="/perfil">Ver perfil</a>
     </UserCardStyle>
   );
 };

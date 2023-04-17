@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 export const ProjectSectionStyle = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: Var(--fondo_seccion);
+  border-radius: 20px 20px 0 0;
   justify-content: space-around;
   .tabsBox {
     overflow: hidden;

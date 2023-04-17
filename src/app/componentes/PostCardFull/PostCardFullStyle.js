@@ -6,12 +6,23 @@ export const PostCardFullStyle = styled.div`
   margin-bottom: 10px;
   display: flex;
   width: 100%;
+  transition: 1s;
+  :hover{
+    filter: brightness(1.3);
+  }
   //grid-template-columns: minmax(auto, 1056px);
   //grid-template-rows: 6fr auto;
   //position: relative;
   .postContainer {
     display: grid;
     position: relative;
+  }
+  .infoClosed {
+    display: none;
+  }
+  .infoOpen {
+    display: block;
+    transition: 1s;
   }
   .postImgHead {
     grid-area: 1;
@@ -24,31 +35,59 @@ export const PostCardFullStyle = styled.div`
     grid-area: 3;
     display: grid;
     grid-template-columns: 15rem auto;
+    h3{
+      margin-left:10px;
+    }
     .sectionOne {
       grid-area: 3/1;
     }
     .sectionTwo {
       grid-area: 3/2;
+      margin-left: 3rem;
+      .objective{
+        display: inline-block;
+        margin-right: 48%;
+      }
+      .budget{
+        display: inline-block;
+      }
+      .startDate{
+        display: inline-block;
+        margin-right: 48%;
+      }
+      .endDate{
+        display: inline-block;
+      }
+      ul{
+        width: -webkit-fill-available;
+        margin: 0;
+        display: inline-block;
+      }
+      ul li,p{
+        display: inline-block;
+      }
     }
   }
-  .postInfoOne {
-    grid-area: 2;
+  .postInfoOne.infoClosed {
+    grid-area: 1;
     display: grid;
     grid-template-columns: 15rem auto;
+    grid-template-rows: 20rem;
     .postImgMin {
-      grid-area: 2/1;
+      grid-area: 1/1;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      img{
-        width:100%;
-        height: 15rem;
+      img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
       }
     }
     .sectionInfo {
-      grid-area: 2/2;
+      margin: 0px 10px;
+      grid-area: 1/2;
       p {
         margin-left: 1.5rem;
         margin-right: 0.5rem;
@@ -81,14 +120,34 @@ export const PostCardFullStyle = styled.div`
     }
   }
 
+  .postInfoOne.infoOpen {
+    grid-template-columns: none;
+    margin-bottom: 3rem;
+    .sectionInfo{
+      margin: 0px 10px;
+    }
+    .postImgMin {
+      display: none;
+    }
+    .sectionTwo {
+      display: none;
+    }
+  }
   .postInfoThree {
     grid-area: 4;
-    .sectionContent{
+    h3{
+      margin-left:10px;
+    }
+    .sectionContent {
       width: 0rem;
     }
   }
   .postInfoFour {
     grid-area: 5;
+    h3{
+      margin-left:10px;
+    }
+    margin-bottom: 4rem;
   }
 
   .postBtn {
@@ -100,6 +159,10 @@ export const PostCardFullStyle = styled.div`
       border: navajowhite;
       font-size: 1rem;
       color: #6931c0;
+    }
+    .showM:hover{
+      color: var(--highlight2);
+      cursor: pointer;
     }
   }
   /*

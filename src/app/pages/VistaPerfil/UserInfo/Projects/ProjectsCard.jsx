@@ -39,36 +39,32 @@ const ProjectsCard = () => {
       <div className="sectionTitle">
         <h3>Proyectos de este usuario</h3>
       </div>
-      <div className="sectionContent">
-        {scrollX !== 0 && (
-          <button
-            className="prev"
-            onClick={() => slide(-150)}
-          >
-            <i className="fa fa-angle-left">{"<"}</i>
-          </button>
-        )}
-        <ul ref={scrl} onScroll={scrollCheck}>
-          <ProjectsSmall />
-          <ProjectsSmall />
-          <ProjectsSmall />
-          <ProjectsSmall />
-          <ProjectsSmall />
-          <ProjectsSmall />
-          <ProjectsSmall />
-          <ProjectsSmall />
-          <ProjectsSmall />
-          <ProjectsSmall />
-        </ul>
+      <div className="scrollContainer">
+        <div className="sectionContent">
+          {scrollX !== 0 && (
+            <button className="prev" onClick={() => slide(-150)}>
+              <i className="fa fa-angle-left">{"<"}</i>
+            </button>
+          )}
+          <ul ref={scrl} onScroll={scrollCheck}>
+            <ProjectsSmall />
+            <ProjectsSmall />
+            <ProjectsSmall />
+            <ProjectsSmall />
+            <ProjectsSmall />
+            <ProjectsSmall />
+            <ProjectsSmall />
+            <ProjectsSmall />
+            <ProjectsSmall />
+            <ProjectsSmall />
+          </ul>
 
-        {!scrolEnd && (
-          <button
-            className="next"
-            onClick={() => slide(+150)}
-          >
-            <i className="fa fa-angle-right">{">"}</i>
-          </button>
-        )}
+          {!scrolEnd && (
+            <button className="next" onClick={() => slide(+150)}>
+              <i className="fa fa-angle-right">{">"}</i>
+            </button>
+          )}
+        </div>
       </div>
     </ProjectsCardStyle>
   );

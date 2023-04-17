@@ -12,7 +12,7 @@ export const AboutCardStyle = styled.div`
     .userName {
       display: inline-block;
       margin: 0;
-      margin-right: 10rem;
+      margin-right: 15%;
       vertical-align: top;
       h4 {
         display: inline-block;
@@ -49,7 +49,7 @@ export const AboutCardStyle = styled.div`
     }
   }
   .sectionFilters {
-    margin-right: 7rem;
+    margin-right: 4rem;
     display: inline-block;
     .filterBox {
       display: inline-block;

@@ -1,9 +1,13 @@
 import styled from "@emotion/styled";
 
 export const UserCardStyle = styled.div`
-  background: purple;
+  background: var(--principal);
+  transition: 1s;
   padding: 10px;
-  .userFilter{
+  :hover{
+    filter: brightness(1.5);
+  }
+  .userFilter {
     display: inline-block;
     margin: 0;
     vertical-align: top;
@@ -17,24 +21,27 @@ export const UserCardStyle = styled.div`
     overflow: hidden;
     display: inline-block;
   }
-  .userName{
+  .userName {
     text-align: center;
     margin-top: 10px;
   }
-  .userDescription{
+  .userDescription {
     margin-top: 20px;
-    h4{
+    h4 {
       font-size: 16px;
       font-weight: bold;
     }
-    h3{
+    h3 {
       font-size: 16px;
     }
   }
-  a{
+  a {
     color: white;
     text-align: right;
     display: block;
     margin-right: 10px;
+  }
+  a:hover{
+    color: var(--highlight);
   }
 `;

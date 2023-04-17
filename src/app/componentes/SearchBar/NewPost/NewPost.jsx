@@ -70,22 +70,22 @@ export function NewPost() {
   return (
     <NewPostStyle>
       <form onSubmit={(e) => PostPublicacion(e)}>
-        <div>
+        <div className="titleInsert">
           <h1>Titulo</h1>
-          <input onChange={(e) => HandleChange(e)} name="Titulo" type="text"/>
+          <input onChange={(e) => HandleChange(e)} placeholder="Titulo de mi proyecto" name="Titulo" type="text"/>
         </div>
-        <div>
+        <div className="descInsert">
           <h3>Descripción</h3>
-          <input onChange={(e) => HandleChange(e)} name="Descripcion" type="text"/>
+          <input onChange={(e) => HandleChange(e)} placeholder="Mi proyecto se trata..." name="Descripcion" type="text"/>
         </div>
-        <div>
+        <div className="objInsert">
           <h3>Objetivo</h3>
-          <input onChange={(e) => HandleChange(e)} name="Objetivo" type="text"/>
+          <input onChange={(e) => HandleChange(e)} placeholder="Lo que espero de este proyecto..." name="Objetivo" type="text"/>
         </div>
-        <div>
+        <div className="roleInsert">
           <h3>Se busca</h3>
           <p>Nombre del rol</p>
-          <input name="Rol" ref={ref_rol} type="text"/>
+          <input name="Rol" placeholder="Actor/Director/Artista..." ref={ref_rol} type="text"/>
           {
             Etiquetas.map((etiqueta)=>{
               return(
@@ -96,8 +96,8 @@ export function NewPost() {
           <p>Etiqueta</p>
           <input name="Etiqueta" ref={ref_etiqueta} type="text"/>
 
-          <input type="button" value="+" onClick={()=>AddEtiqueta()}/>
-          <input type="button" value="Add" onClick={()=>AddRol()}/>
+          <input className="addT" type="button" value="+" onClick={()=>AddEtiqueta()}/>
+          <input className="addR" type="button" value="Add" onClick={()=>AddRol()}/>
         </div>
         <div>
           {
@@ -112,7 +112,7 @@ export function NewPost() {
           }
         </div>
         <br />
-        <button type="submit">Publicar</button>
+        <button className="addB" type="submit">Publicar</button>
       </form>
     </NewPostStyle>
   )
