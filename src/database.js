@@ -1,6 +1,6 @@
 // conexion con la base de datos
 const mongoose = require('mongoose')
-const URI = 'mongodb://127.0.0.1:27017/artado_db'
+const URI = 'mongodb+srv://daniel117622:ids@danieldelacruz.iavhn.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.set('strictQuery', false);
 

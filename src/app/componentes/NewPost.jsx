@@ -21,24 +21,29 @@ export function NewPost() {
   
   const [Datos, setDatos] = useState(Publicacion)
   const [Etiquetas, setEtiquetas] = useState([])
+  const [Preview, setPreview] = useState("")
+  const [img, setImg] = useState({})
   const ref_etiqueta = useRef(null);
   const ref_rol = useRef(null);
 
   const PostPublicacion = async (e) => {
-    await fetch('/api/post', {
+    e.preventDefault()
+    // var data = new FormData();
+    // var input = document.querySelector('input[type="file"]');
+    // data.append('file', input.files[0]);
+    // console.log(typeof(data)+data);
+    console.log(img)
+    console.log(Datos)
+    await fetch('http://localhost:3000/api/post', {
       method: 'POST',
-      body: JSON.stringify(Datos),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
+      body: JSON.stringify({'test':img.clientX}),
+      headers : {'Accept' : 'application/json', 'Content-Type' : 'application/json'}
     })
     .then(res => res.json())
     .then(data => {
       console.log(data)
     })
     .catch(err => console.error(err))
-    e.preventDefault()
   }
 
   function AddEtiqueta() {
@@ -69,9 +74,17 @@ export function NewPost() {
     })
   }
 
+  function MostrarPreview(e)
+  {
+
+    document.getElementById("preview").src = e.target.value;
+    console.log(e.target.value);
+
+  }
+
   return (
     <NewPostStyle>
-      <form onSubmit={(e) => PostPublicacion(e)}>
+      <form onSubmit={(e) => PostPublicacion(e)} encType='multipart/form-data'>
         <div>
           <h1>Titulo</h1>
           <input onChange={(e) => HandleChange(e)} name="Titulo" type="text"/>
@@ -100,6 +113,11 @@ export function NewPost() {
 
           <input type="button" value="+" onClick={()=>AddEtiqueta()}/>
           <input type="button" value="Add" onClick={()=>AddRol()}/>
+          
+          <p>Agregar imagen BD : Cuando se muestre el preview puede continuar</p>
+          <input type="text" onChange={(e) => MostrarPreview(e)}/>
+          <p>Preview</p>
+          <img max-width="600px" max-height="250px"  src="" id="preview" alt="" />
         </div>
         <div>
           {

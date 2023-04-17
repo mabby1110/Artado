@@ -4,6 +4,20 @@ const path = require('path')
 
 const { User, Post } = require('../models/schema')
 
+const multer = require('multer')
+
+const storage = multer.diskStorage({
+    destination: (req,file,cb) => {
+    cb(null,'../images');
+},
+    filename: (req,file,cb) => {
+        console.log(file);
+        cb(null,Date.now() + path.extname(file.originalname))
+    }
+})
+
+const upload = multer({dest: "../images"})
+
 // CRUD USUARIOS
 // create
 router.post('/usr/', async (req, res) => {
@@ -41,15 +55,10 @@ router.delete('/usr/:id', async (req, res) => {
 
 // CRUD PUBLICACIONES
 // create
-router.post('/post/', async (req, res) => {
-    const {
-        Titulo,
-        Descripcion,
-        Objetivo,
-        Rol
-    } = req.body
-    const CreatePost = new Post({Titulo, Descripcion, Objetivo, Rol})
-    await CreatePost.save()
+router.post('/post/:id', upload.single("imageeee"), async (req, res) => {
+    
+    console.log(...req.body)
+    
     res.json({status: "Post saved"})
 })
 

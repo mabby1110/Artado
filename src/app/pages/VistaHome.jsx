@@ -35,7 +35,7 @@ export function Home() {
                 {
                     Datos.map((items)=>{
                         return (
-                            <PostCard key={items._id} titulo={items.Titulo} descripcion={items.Descripcion}/>
+                            <PostCard imgLink={items.imgLink} key={items._id} titulo={items.Titulo} descripcion={items.Descripcion}/>
                         )
                     })
                 }

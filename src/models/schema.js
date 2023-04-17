@@ -15,7 +15,8 @@ const PostSchema = new Schema({
             Titulo: {type: String, required: true},
             Etiquetas: [{type: String, required: true}]
         }
-    ]
+    ],
+    imgLink: {type: String, required:false}
 })
 
 module.exports = {
