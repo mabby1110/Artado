@@ -7,20 +7,6 @@ import { PostCardFullStyle } from "./PostCardFullStyle";
 import ColaboratorScroll from "./ProjectInfo/Colaborators/ColaboratorScroll";
 import UserCard from "../UserCard/UserCard";
 
-// function switchTab(evt, selTab) {
-//   var i, tabcontent, tablinks, select;
-//   tabcontent = document.getElementsByClassName("tabcontent");
-//   for (i = 0; i < tabcontent.length; i++) {
-//     tabcontent[i].style.display = "none";
-//   }
-//   tablinks = document.getElementsByClassName("tablinks");
-//   for (i = 0; i < tablinks.length; i++) {
-//     tablinks[i].className = tablinks[i].className.replace(" active", "");
-//   }
-//   select = document.getElementsByClassName(selTab);
-//   select[0].style.display = "block";
-//   evt.currentTarget.className += " active";
-// }
 
 export function PostCardFull(props) {
   const [open, setOpen] = React.useState(false);

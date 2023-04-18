@@ -3,8 +3,9 @@ import styled from "@emotion/styled";
 export const SearchBarStyle = styled.nav`
 
   display: grid;
+  gap: 10px;
   grid-template-columns: auto 35px 35px;
-  grid-template-rows: 35px 35px auto;
+  grid-template-rows: 35px 51px auto;
   height: fit-content;
 
   .searchInput {

@@ -10,18 +10,18 @@ const SocialCard = () => {
       <div className="socialText">
         <h3>User Name</h3>
         <div className="filterSection">
-          <Label/>
-          <Label/>
-          <Label/>
-          <Label/>
-          <Label/>
-          <Label/>
-          <Label/>
-          <Label/>
+          <Label />
+          <Label />
+          <Label />
+          <Label />
+          <Label />
+          <Label />
+          <Label />
+          <Label />
         </div>
       </div>
     </SocialCardStyle>
   );
 };
 
-export default SocialCard;  
+export default SocialCard;

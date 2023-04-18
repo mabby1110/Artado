@@ -11,7 +11,7 @@ export function FilterBar() {
   return (
     <FilterBarStyle>
       {
-        Array.from({ length: 4 }, (_, index) => (
+        Array.from({ length: 30 }, (_, index) => (
           <Label key={index} />
         ))
       }

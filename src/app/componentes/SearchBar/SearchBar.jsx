@@ -36,11 +36,11 @@ export function SearchBar() {
             <div className="filterSection">
                 <FilterBar/>
             </div>
-            <div className="filterBarBtn">
+            {/* <div className="filterBarBtn">
                 <button onClick={toggleFilterBar}>
                     {isFilterBarOpen ? '>' : 'v'}
                 </button>
-            </div>
+            </div> */}
             {isSidebarOpen && <NewPost className="newPostSection"/>}
         </SearchBarStyle>
     )

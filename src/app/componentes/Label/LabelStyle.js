@@ -13,8 +13,13 @@ export const LabelStyle = styled.div`
     flex-wrap: wrap;
     margin-bottom: 5px;
     text-align: center;
+    transition:1s;
     p {
       margin: 0;
     }
+  }
+  .filterOnly:hover{
+    background: var(--principal);
+    filter: brightness(1.3);
   }
 `

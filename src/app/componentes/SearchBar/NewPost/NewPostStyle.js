@@ -12,6 +12,7 @@ export const NewPostStyle = styled.div`
     border-radius: 6px;
     padding: 0.5rem;
     background: var(--principal);
+    cursor:pointer;
     color: white;
     font-size: 2rem;
   }

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const SocialCardStyle = styled.div`
   flex-grow: 1;
-
+  cursor:pointer;
   background: Var(--fondo_componente);
   color: white;
   height: 4.5em;
