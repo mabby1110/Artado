@@ -1,5 +1,6 @@
 import React from "react";
 import { ProjectsSmallStyle } from "./ProjectsSmallStyle";
+import { NavLink } from "react-router-dom";
 
 const ProjectsSmall = () => {
   return (
@@ -13,7 +14,9 @@ const ProjectsSmall = () => {
               className="projectImg"
             />
             <div className="hoverSection">
+            <NavLink to="/proyectos" className="ProjectLink">
               <p>Ver proyecto</p>
+            </NavLink>
             </div>
           </div>
           <h5>Nombre proyecto</h5>

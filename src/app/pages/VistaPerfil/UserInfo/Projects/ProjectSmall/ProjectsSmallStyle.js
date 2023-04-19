@@ -14,6 +14,7 @@ export const ProjectsSmallStyle = styled.div`
     margin: 0;
     img {
       width: 100%;
+      filter: brightness(0.4);
       min-width: 7.5rem;
       height: 13rem;
       object-fit: cover;
@@ -28,6 +29,9 @@ export const ProjectsSmallStyle = styled.div`
         margin: 0;
         font-size: 1.5rem;
         opacity: 0;
+      }
+      p:hover{
+        color: var(--highlight2);
       }
     }
   }
