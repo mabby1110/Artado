@@ -1,8 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../../assets/artadoLogo.png";
 // css global
 import { NavBarStyle, NavBarStyleTwo } from "./NavBarStyle";
+import { useAuth } from "../../context/authContext";
 
 export function NavBar() {
   return (
@@ -17,15 +18,21 @@ export function NavBar() {
 }
 
 export function NavBarTwo() {
+  const {user, logout} = useAuth()
+  const navigate = useNavigate()
+
+  const handleLogout = async (e) => {
+    await logout()
+    navigate('/')
+  }
+
   return (
     <NavBarStyleTwo className="navTwo">
       <div className="linkContainer">
         <NavLink to="/proyectos" className="proLink">
           Proyectos
         </NavLink>
-        <NavLink to="/login" className="loginLink">
-          Login
-        </NavLink>
+        <button onClick={handleLogout}>Logout</button>
       </div>
       <div className="profileContainer">
         <NavLink to="/perfil" className="profileLink">
