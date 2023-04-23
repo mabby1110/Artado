@@ -23,7 +23,7 @@ export function NavBarTwo() {
 
   const handleLogout = async (e) => {
     await logout()
-    navigate('/')
+    navigate('/login')
   }
 
   return (
@@ -42,6 +42,7 @@ export function NavBarTwo() {
             alt=""
           />
         </NavLink>
+        <p>{user && user.email}</p>
       </div>
     </NavBarStyleTwo>
   );
