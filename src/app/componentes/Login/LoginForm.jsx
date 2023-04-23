@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { LoginStyle } from "./LoginStyle";
 
-const LoginForm = (props) => {
+export const LoginForm = (props) => {
+    const [user, setUser] = useState({
+        email: '',
+        password: ''
+    })
+
     return (
         <LoginStyle>
-            <form method="GET">
+            <form>
                 <label>Usuario:</label>
-                <input type="text" name="username" onChange={props.Change}></input>
+                <input type="email" name="email"></input>
                 <br/>
                 <label>Password:</label>
-                <input type="text" name="password" onChange={props.Change}></input>  
-                <br/>
-                <button onClick={props.Submit}> Login </button>              
+                <input type="password" name="password"></input>        
             </form>
         </LoginStyle>
     );
   };
-
-export default LoginForm

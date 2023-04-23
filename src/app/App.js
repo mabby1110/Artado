@@ -3,6 +3,9 @@ import React from "react"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { NavLink } from "react-router-dom"
 
+// AuthProvider
+import { AuthProvider } from "./context/authContext"
+
 // vistas
 import { Home } from './pages/VistaHome/VistaHome'
 import { Perfil } from './pages//VistaPerfil/VistaPerfil'
@@ -19,20 +22,22 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="main">
-        <NavBar/>
-        <SearchBar/>
-        <ProjectBar/>
-        <div>
-          <NavLink to="/proyectos">Proyectos</NavLink>
-          <NavLink to="/perfil">Perfil</NavLink>
-        </div>
-        <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path="/perfil" element={<Perfil/>} />
-            <Route path="/proyectos" element={<Proyectos/>} />
-            <Route path="/login" element={<Login/>} />
-        </Routes>
-        <SocialBar/>
+        <AuthProvider>
+          <NavBar/>
+          <SearchBar/>
+          <ProjectBar/>
+          <div>
+            <NavLink to="/proyectos">Proyectos</NavLink>
+            <NavLink to="/perfil">Perfil</NavLink>
+          </div>
+          <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path="/perfil" element={<Perfil/>} />
+              <Route path="/proyectos" element={<Proyectos/>} />
+              <Route path="/login" element={<Login/>} />
+          </Routes>
+          <SocialBar/>
+        </AuthProvider>
       </div>
     </BrowserRouter>
   )
