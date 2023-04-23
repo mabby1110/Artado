@@ -1,54 +1,6 @@
 import React from "react";
 import { LoginForm } from "./LoginForm/LoginForm";
-import { useAuth } from "../../context/authContext"
-import { useNavigate } from "react-router-dom"
 
 export function Login() {
-  const [user, setUser] = useState({
-    email: '',
-    password: ''
-  })
-
-  const [error, setError] = useState()
-  const { login } = useAuth()
-  const navigate = useNavigate()
-
-  const handleChange = ({ target: { name, value } }) => {
-    setUser({ ...user, [name]: value })
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-      await login(user.email, user.password)
-      navigate('/')
-    } catch (error) {
-      setError(error.message)
-    }
-  }
-
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">email:</label>
-        <input 
-          type="email"
-          name="email"
-          id="email"
-          onChange={handleChange}
-        />
-
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          onChange={handleChange}
-        />
-
-        <button type="submit">Login</button>
-      </form>
-      {error && <p>{error}</p>}
-    </div>
-  );
+  return <LoginForm/>
 };
