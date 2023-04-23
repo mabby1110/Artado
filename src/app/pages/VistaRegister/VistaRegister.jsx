@@ -1,41 +1,52 @@
 import { useState } from "react"
 import { useAuth } from "../../context/authContext"
+import { useNavigate } from "react-router-dom"
 
 export function Register() {
     const [user, setUser] = useState({
         email: '',
         password: ''
     })
-    
+
+    const [error, setError] = useState()
     const { signup } = useAuth()
+    const navigate = useNavigate()
 
     const handleChange = ({target: {name, value}}) => {
         setUser({...user, [name]: value})
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        signup(user.email, user.password)
+        try {
+            let res = await signup(user.email, user.password)
+            navigate('/')
+        } catch(error){
+            setError(error.message)
+        }
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email</label>
-            <input
-                type="email"
-                name="email"
-                placeholder="your@email.art"
-                onChange={handleChange}
-            />
+        <div>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="email">Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="your@email.art"
+                    onChange={handleChange}
+                />
 
-            <label htmlFor="Password">Password</label>
-            <input
-                type="password"
-                name="password"
-                onChange={handleChange}
-            />
+                <label htmlFor="Password">Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    onChange={handleChange}
+                />
 
-            <button onChange={handleChange}>Register</button>
-        </form>
+                <button>Register</button>
+            </form>
+            {error && <p>{error}</p>}
+        </div>
     )
 }
