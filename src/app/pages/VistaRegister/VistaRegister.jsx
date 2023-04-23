@@ -19,7 +19,7 @@ export function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            let res = await signup(user.email, user.password)
+            await signup(user.email, user.password)
             navigate('/')
         } catch(error){
             setError(error.message)

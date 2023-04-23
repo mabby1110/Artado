@@ -1,34 +1,53 @@
 import React, { useState } from 'react';
+import { useAuth } from "../../context/authContext"
+import { useNavigate } from "react-router-dom"
 
 export function Login() {
-  const [isLogin, setIsLogin] = useState(true);
-  
-  const [user, setUser] = useState('');
-  const [password, setPassword] = useState('');
+  const [user, setUser] = useState({
+    email: '',
+    password: ''
+  })
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // handle login/signup logic here
-    console.log('Form submitted');
-  };
+  const [error, setError] = useState()
+  const { login } = useAuth()
+  const navigate = useNavigate()
+
+  const handleChange = ({ target: { name, value } }) => {
+    setUser({ ...user, [name]: value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await login(user.email, user.password)
+      navigate('/')
+    } catch (error) {
+      setError(error.message)
+    }
+  }
 
   return (
     <div>
-      <h1>{isLogin ? 'Login' : 'Signup'}</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="user">user:</label>
-        <input type="user" id="user" value={user} onChange={(e) => setUser(e.target.value)} />
+        <label htmlFor="email">email:</label>
+        <input 
+          type="email"
+          name="email"
+          id="email"
+          onChange={handleChange}
+        />
 
         <label htmlFor="password">Password:</label>
-        <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          onChange={handleChange}
+        />
 
-        <button type="submit">{isLogin ? 'Login' : 'Signup'}</button>
+        <button type="submit">Login</button>
       </form>
-
-      <p>
-        {isLogin ? 'Don\'t have an account?' : 'Already have an account?'}
-        <button onClick={() => setIsLogin(!isLogin)}>{isLogin ? 'Signup' : 'Login'}</button>
-      </p>
+      {error && <p>{error}</p>}
     </div>
   );
 };
