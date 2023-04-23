@@ -11,6 +11,7 @@ import { Home } from './pages/VistaHome/VistaHome'
 import { Perfil } from './pages//VistaPerfil/VistaPerfil'
 import { Proyectos } from "./pages/VistaProyectos/VistaProyectos"
 import { Login } from "./pages/VistaLogin/VistaLogin"
+import { Register } from "./pages/VistaRegister/VistaRegister"
 
 // componentes
 import { NavBar } from "./componentes/NavBar/NavBar"
@@ -35,6 +36,7 @@ export default function App() {
               <Route path="/perfil" element={<Perfil/>} />
               <Route path="/proyectos" element={<Proyectos/>} />
               <Route path="/login" element={<Login/>} />
+              <Route path="/register" element={<Register/>} />
           </Routes>
           <SocialBar/>
         </AuthProvider>
