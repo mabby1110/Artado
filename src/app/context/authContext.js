@@ -16,8 +16,10 @@ export function AuthProvider ({children}) {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const login = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password)
+    const login = async (email, password) => {
+        const userCredentials = await signInWithEmailAndPassword(auth, email, password)
+        console.log(userCredentials)
+        return userCredentials
     }
 
     return (
