@@ -37,7 +37,7 @@ export const LoginFormStyle = styled.div`
     text-align: center;
   }
   .submitB {
-    width: 100%;
+    width: 100%; 
     transition:0.5s; 
     background:var(--principal);
     cursor:pointer;

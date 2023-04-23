@@ -45,7 +45,7 @@ export function LoginForm() {
             <label htmlFor="Password">Password</label>
             <input type="password" name="password" onChange={handleChange} />
           </div>
-          <button className="submitB" type="submit">
+          <button className="submitB" type="submit"> 
             Login
           </button>
         </form>

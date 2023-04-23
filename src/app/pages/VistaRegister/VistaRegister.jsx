@@ -50,7 +50,7 @@ export function Register() {
             Register
           </button>
         </form>
-        {error && <p>{error}</p>}
+        {error && <p>{error}</p>} 
         <div className="extraBSection">
           <p>
             Already have an account?
