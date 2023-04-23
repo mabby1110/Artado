@@ -38,7 +38,7 @@ export const LoginFormStyle = styled.div`
   }
   .submitB {
     width: 100%;
-    transition:0.5s;
+    transition:0.5s; 
     background:var(--principal);
     cursor:pointer;
     border:black solid;
