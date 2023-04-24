@@ -29,7 +29,7 @@ export const ProjectBarStyle = styled.div`
     color: var(--highlight);
   }
   .projectBarContent {
-    width: 356px;
+    width: 280px;
     transition: all 0.4s ease-out;
     h2{
       margin-top:0;
