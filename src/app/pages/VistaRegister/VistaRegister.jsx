@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useAuth } from "../../context/authContext"
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom";
 
 export function Register() {
     const [user, setUser] = useState({
@@ -47,6 +47,11 @@ export function Register() {
                 <button>Register</button>
             </form>
             {error && <p>{error}</p>}
+            <div className="extraBSection">
+                <NavLink to="/login">
+                    <p>Already have an account? Login</p>
+                </NavLink>
+            </div>
         </div>
     )
 }

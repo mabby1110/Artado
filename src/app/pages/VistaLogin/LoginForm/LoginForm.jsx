@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LoginFormStyle } from "./LoginFormStyle";
 import { useAuth } from "../../../context/authContext"
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom";
 
 export function LoginForm() {
   const [user, setUser] = useState({
@@ -54,7 +54,9 @@ export function LoginForm() {
         </form>
         {error && <p>{error}</p>}
         <div className="extraBSection">
-            {<p>Don't have an account?</p>}
+          <NavLink to="/register">
+            <p>Don't have an account? Register</p>
+          </NavLink>
         </div>
       </div>
     </LoginFormStyle>

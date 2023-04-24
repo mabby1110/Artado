@@ -1,75 +1,107 @@
 /** @jsxImportSource @emotion/react */
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
+import { db, storage } from "../../../../firebase";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { useParams, useNavigate } from "react-router-dom";
 
 // css global
 import { NewPostStyle } from "./NewPostStyle";
+import { Collection } from "mongoose";
+import { useNavigate } from "react-router-dom";
 
 export function NewPost() {
-  let Publicacion = {
+  const initPost = {
     Titulo: '',
     Descripcion: '',
     Objetivo: '',
     Rol: []
   }
 
-  let Rol = {
+  const initRol = {
       Titulo: '',
       Etiquetas: []
   }
-  
-  const [Datos, setDatos] = useState(Publicacion)
-  const [Etiquetas, setEtiquetas] = useState([])
+
   const ref_etiqueta = useRef(null);
   const ref_rol = useRef(null);
+  const navigate = useNavigate()
 
-  const PostPublicacion = async (e) => {
-    await fetch('/api/post', {
-      method: 'POST',
-      body: JSON.stringify(Datos),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-    })
-    .catch(err => console.error(err))
-    e.preventDefault()
-  }
+  const [postData, setPostData] = useState(initPost)
+  const [rol, setRol] = useState(initRol)
+  const [file, SetFile] = useState(null)
+  const [progress, setProgress] = useState(null);
+  const [submit, setSubmit] = useState(false);
 
-  function AddEtiqueta() {
-    Rol.Etiquetas.push(ref_etiqueta.current.value)
-    setEtiquetas((prev)=>{
-      return (
-        [...prev, ...Rol.Etiquetas]
-      )
-    })
+  useEffect(() => {
+    const uploadFile = () => {
+      const name = new Date().getTime() + file.nameconst
+      const storageRef = ref(storage, file.name)
+      const uploadTask = uploadBytesResumable(storageRef, file)
+
+      uploadTask.on("state_changed", (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        setProgress(progress)
+        switch (snapshot.state) {
+          case "pause":
+            console.log("upload is paused")
+            break;
+          case "running":
+            console.log("upload is running")
+            break;
+          default:
+            break;
+        }
+        console.log(progress)
+      }, (error) => {
+        console.log(error)
+      }, () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((getDownloadURL) => {
+          setPostData((prev) => ({...prev, img: getDownloadURL}))
+        })
+      })
+    }
+
+    file && uploadFile()
+  }, [file]);
+
+  function AddLabel() {
+    const labelList = rol.Etiquetas
+    labelList.push(ref_etiqueta.current.value)
+    setRol({...rol, Etiquetas: labelList})
     ref_etiqueta.current.value = ''
   }
-  
+
   function AddRol() {
-    Rol.Titulo = ref_rol.current.value
-    Rol.Etiquetas = Etiquetas
-    setDatos((prev)=>{
-      prev.Rol.push(Rol)
-      return({...prev, Rol: prev.Rol})
-    })
-    setEtiquetas([])
+    const rolList = postData.Rol
+    rolList.push(rol)
+    setPostData({...postData, Rol: rolList})
+    setRol(initRol)
+    ref_etiqueta.current.value = ''
     ref_rol.current.value = ''
   }
 
+  function HandleRol(e) {
+    setRol({...rol, Titulo: e.target.value})
+  }
+
   function HandleChange(e) {
-    const { name, value } = e.target
-    setDatos((prev)=>{
-      return({...prev, [name]: value})
+    setPostData({...postData, [e.target.name]: e.target.value})
+  }
+
+  const HandleSubmit = async (e) => {
+    e.preventDefault()
+    setSubmit(True)
+    await addDoc(collection(db, 'user'),{
+      ...postData,
+      timestamp: serverTimestamp()
     })
+    navigate('/')
   }
 
   return (
     <NewPostStyle>
-      <form onSubmit={(e) => PostPublicacion(e)}>
+      <form onSubmit={(e) => HandleSubmit(e)}>
         <div className="titleInsert">
           <h1>Titulo</h1>
           <input onChange={(e) => HandleChange(e)} placeholder="Titulo de mi proyecto" name="Titulo" type="text"/>
@@ -82,26 +114,30 @@ export function NewPost() {
           <h3>Objetivo</h3>
           <input onChange={(e) => HandleChange(e)} placeholder="Lo que espero de este proyecto..." name="Objetivo" type="text"/>
         </div>
+
         <div className="roleInsert">
           <h3>Se busca</h3>
+
           <p>Nombre del rol</p>
-          <input name="Rol" placeholder="Actor/Director/Artista..." ref={ref_rol} type="text"/>
-          {
-            Etiquetas.map((etiqueta)=>{
-              return(
-                <input type="button" key={etiqueta} value={etiqueta} />
-              )
-            })
-          }
+          <input name="Rol" onChange={HandleRol} placeholder="Actor/Director/Artista..." ref={ref_rol} type="text"/>
+          
           <p>Etiqueta</p>
           <input name="Etiqueta" ref={ref_etiqueta} type="text"/>
-
-          <input className="addT" type="button" value="+" onClick={()=>AddEtiqueta()}/>
-          <input className="addR" type="button" value="Add" onClick={()=>AddRol()}/>
+          <input className="addT" type="button" value="+" onClick={AddLabel}/>
+          <div>
+            {
+              rol.Etiquetas.map((etiqueta)=>{
+                return(
+                  <input type="button" key={etiqueta} value={etiqueta} />
+                )
+              })
+            }
+          </div>
+          <input className="addR" type="button" value="Agregar Rol" onClick={AddRol}/>
         </div>
         <div>
           {
-            Datos.Rol.map((rol, index)=>{
+            postData.Rol.map((rol, index)=>{
               return(
                 <div key={index}>
                   <p> {rol.Titulo} </p>
@@ -112,7 +148,18 @@ export function NewPost() {
           }
         </div>
         <br />
-        <button className="addB" type="submit">Publicar</button>
+        <input
+          type="file"
+          label="Upload"
+          onChange={(e) => SetFile(e.target.files[0])}
+        />
+        <br />
+        <button
+          type="submit"
+          disabled={progress !== null && progress < 100}
+        >
+          Publicar
+        </button>
       </form>
     </NewPostStyle>
   )
