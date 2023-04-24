@@ -8,7 +8,6 @@ import { useParams, useNavigate } from "react-router-dom";
 // css global
 import { NewPostStyle } from "./NewPostStyle";
 import { Collection } from "mongoose";
-import { useNavigate } from "react-router-dom";
 
 export function NewPost() {
   const initPost = {
